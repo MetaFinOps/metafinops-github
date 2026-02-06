@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Platform – MetaFinOps</title>
+  <meta name="description" content="Explore the MetaFinOps platform architecture. AI cost engine, GPU telemetry, DevOps guardrails, carbon analytics, and enterprise dashboards." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/solutions.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <span></span>
+      <span>AI-native FinOps Solutions by <a href="index.html">MetaFinOps</a></span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <svg class="brand-logo" viewBox="0 0 36 36" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#6BB8FF"/><stop offset="100%" style="stop-color:#3B82F6"/></linearGradient></defs>
+          <path d="M8 28 L18 6 L28 28" stroke="url(#logoGrad)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 20 Q18 10 24 20" stroke="url(#logoGrad)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M15 24 Q18 17 21 24" stroke="url(#logoGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-name">MetaFinOps</span>
+      </a>
+      <nav class="nav" id="mainNav">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false">Solutions <span class="chevron">&#9662;</span></button>
+          <div class="nav-dropdown-menu">
+            <a href="solutions/ai-gpu-finops.html">AI/GPU FinOps</a>
+            <a href="solutions/devops-finops.html">DevOps FinOps</a>
+            <a href="solutions/greenops.html">GreenOps</a>
+            <div class="dropdown-divider"></div>
+            <a href="use-cases.html">Use Cases</a>
+            <a href="why-metafinops.html">Why MetaFinOps</a>
+          </div>
+        </div>
+        <a href="platform.html">Platform</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="#" class="nav-login">
+          <span class="login-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg></span>
+          Log In
+        </a>
+        <a href="contact.html" class="btn-outline-header">Get Started</a>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== PAGE HERO ===== -->
+    <section class="page-hero animate-on-scroll">
+      <canvas id="pageHeroCanvas" class="page-hero-canvas"></canvas>
+      <div class="container page-hero-inner">
+        <span class="section-label">PLATFORM</span>
+        <h1>The MetaFinOps Platform</h1>
+        <p>A unified AI-native FinOps engine that ingests cloud billing, GPU telemetry, and token usage data to deliver actionable cost intelligence.</p>
+        <div class="hero-badges">
+          <span class="hero-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+            AWS
+          </span>
+          <span class="hero-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+            GCP
+          </span>
+          <span class="hero-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+            Azure
+          </span>
+          <span class="hero-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Kubernetes
+          </span>
+          <span class="hero-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            Terraform
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CORE ENGINES ===== -->
+    <section class="capabilities-section animate-on-scroll">
+      <div class="container">
+        <h2>Core Engines</h2>
+        <p>Six purpose-built engines that power every layer of the MetaFinOps platform.</p>
+        <div class="capabilities-grid">
+          <!-- 1. AI Cost Engine -->
+          <div class="capability-card">
+            <div class="capability-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>AI Cost Engine</h3>
+            <p>Track GPU spend, model costs, and token usage across all providers. Attribute costs to teams, experiments, and individual model runs.</p>
+          </div>
+          <!-- 2. GPU Compute Engine -->
+          <div class="capability-card">
+            <div class="capability-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
+            </div>
+            <h3>GPU Compute Engine</h3>
+            <p>Real-time GPU utilization monitoring with idle detection and right-sizing recommendations to eliminate waste across clusters.</p>
+          </div>
+          <!-- 3. DevOps Guardrails -->
+          <div class="capability-card">
+            <div class="capability-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>DevOps Guardrails</h3>
+            <p>CI/CD cost checks, PR annotations, and Terraform cost previews that catch budget overruns before they reach production.</p>
+          </div>
+          <!-- 4. Carbon Engine -->
+          <div class="capability-card">
+            <div class="capability-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+            </div>
+            <h3>Carbon Engine</h3>
+            <p>CO2e tracking per region, green workload recommendations, and ESG-ready reporting for sustainability compliance.</p>
+          </div>
+          <!-- 5. Optimization Engine -->
+          <div class="capability-card">
+            <div class="capability-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3>Optimization Engine</h3>
+            <p>ML-powered recommendations for spot instances, reserved capacity, and GPU scheduling to maximize cost efficiency.</p>
+          </div>
+          <!-- 6. Governance & Policies -->
+          <div class="capability-card">
+            <div class="capability-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg>
+            </div>
+            <h3>Governance &amp; Policies</h3>
+            <p>Team budgets, approval workflows, audit logs, and compliance packs that enforce financial accountability across the organization.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ARCHITECTURE ===== -->
+    <section class="section animate-on-scroll">
+      <div class="container solution-split">
+        <div class="split-left">
+          <span class="section-label">ARCHITECTURE</span>
+          <h2>How Data Flows Through MetaFinOps</h2>
+          <p>The MetaFinOps platform operates on a 5-layer pipeline architecture that transforms raw cloud and GPU data into actionable intelligence.</p>
+          <p>Data is ingested from cloud providers, normalized into a unified cost model, enriched with carbon and utilization metadata, processed through our ML analytics engine, and delivered through interactive dashboards and APIs.</p>
+          <p>Each layer is independently scalable and designed for enterprise-grade reliability, ensuring sub-minute data freshness across all connected sources.</p>
+        </div>
+        <div class="split-right">
+          <div class="architecture-diagram">
+&#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;
+&#9474;        CLOUD PROVIDERS            &#9474;
+&#9474;   AWS  |  GCP  |  Azure  |  K8s   &#9474;
+&#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;
+                 &#9474;
+                 &#9660;
+&#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;
+&#9474;        DATA INGESTION             &#9474;
+&#9474;  Billing APIs | GPU Telemetry     &#9474;
+&#9474;  Token Logs   | Usage Metrics     &#9474;
+&#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;
+                 &#9474;
+                 &#9660;
+&#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;
+&#9474;   ENRICHMENT &amp; CARBON MAPPING    &#9474;
+&#9474;  Cost Normalization | CO2e Calc   &#9474;
+&#9474;  Tag Enrichment    | Attribution  &#9474;
+&#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;
+                 &#9474;
+                 &#9660;
+&#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;
+&#9474;     ANALYTICS &amp; ML ENGINE        &#9474;
+&#9474;  Anomaly Detection | Forecasting  &#9474;
+&#9474;  Recommendations   | Scoring      &#9474;
+&#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;
+                 &#9474;
+                 &#9660;
+&#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;
+&#9474;    VISUALIZATION &amp; APIs          &#9474;
+&#9474;  Dashboards  | REST API | Alerts  &#9474;
+&#9474;  Reports     | Webhooks | Slack   &#9474;
+&#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DASHBOARD CONCEPTS ===== -->
+    <section class="section animate-on-scroll" style="padding:4rem 0;background:var(--bg);">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:3rem;">
+          <span class="section-label">DASHBOARDS</span>
+          <h2 style="font-size:1.6rem;font-weight:600;color:var(--heading);margin-top:1rem;">Live Platform Metrics</h2>
+        </div>
+        <div class="dashboard-preview">
+          <div class="dashboard-header">
+            <h4>MetaFinOps Dashboard</h4>
+            <span style="font-size:0.78rem;color:var(--text-muted);">Live</span>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+            <div class="dashboard-widget">
+              <h5>GPU Utilization</h5>
+              <div class="big-number">73%</div>
+              <div class="big-number-label">Average GPU Utilization</div>
+            </div>
+            <div class="dashboard-widget">
+              <h5>Token Cost</h5>
+              <div class="big-number">$4.20</div>
+              <div class="big-number-label">Cost per 1M Tokens</div>
+            </div>
+            <div class="dashboard-widget">
+              <h5>Monthly Savings</h5>
+              <div class="big-number">$18.5K</div>
+              <div class="big-number-label">Identified Savings</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== API EXAMPLES ===== -->
+    <section class="section animate-on-scroll" style="padding:4rem 0;background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:3rem;">
+          <span class="section-label">API</span>
+          <h2 style="font-size:1.6rem;font-weight:600;color:var(--heading);margin-top:1rem;">Developer-First API</h2>
+          <p style="color:var(--text-muted);font-size:0.95rem;max-width:500px;margin:0.8rem auto 0;">Query cost and usage data programmatically with our RESTful API.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+          <div class="code-block">
+            <span class="code-label">Token Cost API</span>
+<span class="code-key">POST</span> /api/token-usage
+
+{
+  <span class="code-key">"model"</span>: <span class="code-string">"gpt-4-turbo"</span>,
+  <span class="code-key">"team"</span>: <span class="code-string">"ml-research"</span>,
+  <span class="code-key">"period"</span>: <span class="code-string">"2025-01"</span>,
+  <span class="code-key">"input_tokens"</span>: <span class="code-value">2450000</span>,
+  <span class="code-key">"output_tokens"</span>: <span class="code-value">890000</span>,
+  <span class="code-key">"total_cost"</span>: <span class="code-value">142.80</span>
+}</div>
+          <div class="code-block">
+            <span class="code-label">GPU Usage API</span>
+<span class="code-key">POST</span> /api/gpu-jobs
+
+{
+  <span class="code-key">"cluster"</span>: <span class="code-string">"us-east-gpu-01"</span>,
+  <span class="code-key">"gpu_type"</span>: <span class="code-string">"A100-80GB"</span>,
+  <span class="code-key">"job_id"</span>: <span class="code-string">"train-llm-7b-v3"</span>,
+  <span class="code-key">"duration_hrs"</span>: <span class="code-value">48.5</span>,
+  <span class="code-key">"avg_utilization"</span>: <span class="code-value">0.73</span>,
+  <span class="code-key">"cost"</span>: <span class="code-value">1940.00</span>
+}</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TECH STACK ===== -->
+    <section class="section animate-on-scroll" style="padding:4rem 0;background:var(--bg);">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:2rem;">
+          <span class="section-label">INTEGRATIONS</span>
+          <h2 style="font-size:1.6rem;font-weight:600;color:var(--heading);margin-top:1rem;">Built on Modern Infrastructure</h2>
+        </div>
+        <div class="integration-logos" style="justify-content:center;">
+          <span class="integration-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            Python FastAPI
+          </span>
+          <span class="integration-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            BigQuery
+          </span>
+          <span class="integration-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            PostgreSQL
+          </span>
+          <span class="integration-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            Vertex AI
+          </span>
+          <span class="integration-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+            React
+          </span>
+          <span class="integration-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            Grafana
+          </span>
+          <span class="integration-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            Terraform
+          </span>
+          <span class="integration-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Kubernetes
+          </span>
+          <span class="integration-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+            Airflow
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="page-cta animate-on-scroll">
+      <div class="container">
+        <h2>Ready to See It in Action?</h2>
+        <p>Schedule a live walkthrough and see how MetaFinOps transforms your cloud and AI cost management.</p>
+        <a href="contact.html" class="btn-primary">Get Started</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col footer-brand-col">
+        <a href="index.html" class="brand footer-brand">
+          <svg class="brand-logo" viewBox="0 0 36 36" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 28 L18 6 L28 28" stroke="#FF6B6B" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 20 Q18 10 24 20" stroke="#FF6B6B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          </svg>
+          <span class="brand-name">MetaFinOps</span>
+        </a>
+        <p class="footer-contact">contact@metafinops.com<br/>1618 Longmoor LN SE,<br/>Smyrna, GA 30080</p>
+      </div>
+      <div class="footer-col footer-links">
+        <a href="solutions/ai-gpu-finops.html">AI/GPU FinOps</a>
+        <a href="solutions/devops-finops.html">DevOps FinOps</a>
+        <a href="solutions/greenops.html">GreenOps</a>
+        <a href="platform.html">Platform</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html" class="btn-primary footer-cta">Get Started</a>
+      </div>
+      <div class="footer-col footer-newsletter">
+        <h4>Subscribe to Our Newsletter</h4>
+        <form class="newsletter-form" id="newsletterForm">
+          <label for="emailInput">Email *</label>
+          <input type="email" id="emailInput" required placeholder="" />
+          <label class="checkbox-row"><input type="checkbox" required /><span>Yes, subscribe me to your newsletter. *</span></label>
+          <button type="submit" class="btn-outline-submit">Submit</button>
+        </form>
+      </div>
+      <div class="footer-col footer-social-col">
+        <h4>Connect With Us:</h4>
+        <div class="social-row">
+          <a href="#" aria-label="LinkedIn" class="social-circle"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+          <a href="#" aria-label="Facebook" class="social-circle"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
+          <a href="#" aria-label="Twitter" class="social-circle"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 01-1.93.07 4.28 4.28 0 004 2.98 8.521 8.521 0 01-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg></a>
+        </div>
+        <p class="footer-copy">&copy; 2025 by MetaFinOps. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <button class="chat-button" type="button" aria-label="Chat"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg></button>
+
+  <script src="js/particles.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Roadmap – MetaFinOps 6-Month MVP Plan</title>
+  <meta name="description" content="See what's coming next at MetaFinOps. Our 6-month MVP roadmap covers GPU FinOps, DevOps guardrails, GreenOps analytics, and enterprise features." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <span></span>
+      <span>AI-native FinOps Solutions by <a href="index.html">MetaFinOps</a></span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <svg class="brand-logo" viewBox="0 0 36 36" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#6BB8FF"/><stop offset="100%" style="stop-color:#3B82F6"/></linearGradient></defs>
+          <path d="M8 28 L18 6 L28 28" stroke="url(#logoGrad)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 20 Q18 10 24 20" stroke="url(#logoGrad)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M15 24 Q18 17 21 24" stroke="url(#logoGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-name">MetaFinOps</span>
+      </a>
+      <nav class="nav" id="mainNav">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false">Solutions <span class="chevron">&#9662;</span></button>
+          <div class="nav-dropdown-menu">
+            <a href="solutions/ai-gpu-finops.html">AI/GPU FinOps</a>
+            <a href="solutions/devops-finops.html">DevOps FinOps</a>
+            <a href="solutions/greenops.html">GreenOps</a>
+            <div class="dropdown-divider"></div>
+            <a href="use-cases.html">Use Cases</a>
+            <a href="why-metafinops.html">Why MetaFinOps</a>
+          </div>
+        </div>
+        <a href="platform.html">Platform</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="#" class="nav-login">
+          <span class="login-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg></span>
+          Log In
+        </a>
+        <a href="contact.html" class="btn-outline-header">Get Started</a>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="roadmap-hero">
+    <div class="container">
+      <h1>Product Roadmap</h1>
+      <p>Our 6-month MVP journey &mdash; from foundation to enterprise-ready AI-native FinOps platform.</p>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section style="padding:2rem 0 4rem;">
+    <div class="container">
+      <div class="timeline">
+
+        <!-- Month 1-2: Foundation -->
+        <div class="timeline-item completed">
+          <div class="timeline-dot"></div>
+          <span class="status-badge completed">Completed</span>
+          <div class="milestone-card">
+            <h3>Months 1&ndash;2: Foundation &amp; Core Ingestion</h3>
+            <ul>
+              <li>Multi-cloud cost data ingestion (AWS, GCP, Azure)</li>
+              <li>Unified cost normalization and tagging engine</li>
+              <li>Basic dashboard with spend-by-service views</li>
+              <li>GPU instance identification and tracking</li>
+              <li>Authentication, RBAC, and tenant isolation</li>
+              <li>CI/CD pipeline and infrastructure scaffolding</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Month 3-4: Intelligence Layer -->
+        <div class="timeline-item in-progress">
+          <div class="timeline-dot"></div>
+          <span class="status-badge in-progress">In Progress</span>
+          <div class="milestone-card">
+            <h3>Months 3&ndash;4: Intelligence &amp; Guardrails</h3>
+            <ul>
+              <li>GPU utilization monitoring with idle detection alerts</li>
+              <li>Token cost modeling for OpenAI, Anthropic, Vertex AI</li>
+              <li>PR cost annotation bot (GitHub &amp; GitLab)</li>
+              <li>Terraform cost preview integration</li>
+              <li>Budget policy engine with threshold blocking</li>
+              <li>Anomaly detection with Slack/PagerDuty notifications</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Month 5-6: GreenOps & Enterprise -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <span class="status-badge planned">Planned</span>
+          <div class="milestone-card">
+            <h3>Months 5&ndash;6: GreenOps &amp; Enterprise</h3>
+            <ul>
+              <li>Carbon footprint tracking per service, region, and GPU-hour</li>
+              <li>Green region recommendations for batch workloads</li>
+              <li>ESG compliance report exports (PDF &amp; CSV)</li>
+              <li>Model-level cost attribution dashboards</li>
+              <li>Team-level budget management and approval workflows</li>
+              <li>SSO integration and enterprise admin controls</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Q3 2025: Scale -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <span class="status-badge planned">Planned</span>
+          <div class="milestone-card">
+            <h3>Q3 2025: Scale &amp; Optimize</h3>
+            <ul>
+              <li>RI/SP discount optimization recommendations</li>
+              <li>Multi-model cost comparison engine</li>
+              <li>Custom policy builder (no-code rule creation)</li>
+              <li>Kubernetes cost allocation (namespace &amp; pod level)</li>
+              <li>Advanced forecasting with ML-based spend prediction</li>
+              <li>Public API and webhook integrations</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Q4 2025: Ecosystem -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <span class="status-badge planned">Planned</span>
+          <div class="milestone-card">
+            <h3>Q4 2025: Ecosystem &amp; Marketplace</h3>
+            <ul>
+              <li>Integration marketplace (Datadog, Grafana, ServiceNow)</li>
+              <li>Custom dashboard builder with drag-and-drop widgets</li>
+              <li>FinOps-as-Code SDK for infrastructure-as-code workflows</li>
+              <li>Multi-tenant reseller portal for MSPs</li>
+              <li>SOC 2 Type II certification</li>
+              <li>AI-powered optimization copilot</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT PILLARS -->
+  <section class="gap-section">
+    <div class="container">
+      <h2 style="text-align:center;margin-bottom:0.8rem;">Three Pillars of the Platform</h2>
+      <p style="text-align:center;color:var(--text-muted);margin-bottom:2.5rem;max-width:520px;margin-left:auto;margin-right:auto;">Every milestone on our roadmap maps to one of three strategic pillars.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border);">
+        <div style="padding:2rem 1.8rem;border-right:1px solid var(--border);">
+          <div style="width:44px;height:44px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/></svg>
+          </div>
+          <h3 style="font-size:1rem;font-weight:600;color:var(--heading);margin-bottom:0.5rem;">AI/GPU FinOps</h3>
+          <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.65;">GPU utilization tracking, token cost modeling, idle detection, model-level attribution, and right-sizing recommendations.</p>
+        </div>
+        <div style="padding:2rem 1.8rem;border-right:1px solid var(--border);">
+          <div style="width:44px;height:44px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="12" y1="2" x2="12" y2="22"/></svg>
+          </div>
+          <h3 style="font-size:1rem;font-weight:600;color:var(--heading);margin-bottom:0.5rem;">DevOps FinOps</h3>
+          <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.65;">PR cost annotations, CI/CD budget guardrails, Terraform preview, policy-as-code enforcement, and anomaly detection.</p>
+        </div>
+        <div style="padding:2rem 1.8rem;">
+          <div style="width:44px;height:44px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/><path d="M8 18l-2 2M16 18l2 2"/></svg>
+          </div>
+          <h3 style="font-size:1rem;font-weight:600;color:var(--heading);margin-bottom:0.5rem;">GreenOps</h3>
+          <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.65;">Carbon per GPU-hour, green region scheduling, ESG compliance exports, and sustainability-aware optimization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:4rem 0;text-align:center;border-top:1px solid var(--border);">
+    <div class="container">
+      <h2 style="font-size:1.6rem;font-weight:600;color:var(--heading);margin-bottom:1rem;">Want to Shape What We Build?</h2>
+      <p style="color:var(--text-muted);margin-bottom:2rem;font-size:0.95rem;max-width:500px;margin-left:auto;margin-right:auto;">Join our early access program and help prioritize the features that matter most to your team.</p>
+      <a href="contact.html" class="btn-primary">Join Early Access &rarr;</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-brand-col">
+        <a href="index.html" class="brand">
+          <svg class="brand-logo" viewBox="0 0 36 36" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="logoGradF" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#6BB8FF"/><stop offset="100%" style="stop-color:#3B82F6"/></linearGradient></defs>
+            <path d="M8 28 L18 6 L28 28" stroke="url(#logoGradF)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 20 Q18 10 24 20" stroke="url(#logoGradF)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M15 24 Q18 17 21 24" stroke="url(#logoGradF)" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </svg>
+          <span class="brand-name">MetaFinOps</span>
+        </a>
+        <p class="footer-tagline">AI-native FinOps Solutions</p>
+      </div>
+      <div class="footer-col footer-links">
+        <a href="solutions/ai-gpu-finops.html">AI/GPU FinOps</a>
+        <a href="solutions/devops-finops.html">DevOps FinOps</a>
+        <a href="solutions/greenops.html">GreenOps</a>
+        <a href="platform.html">Platform</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html" class="btn-primary footer-cta">Get Started</a>
+      </div>
+      <div class="footer-col footer-newsletter">
+        <h4>Subscribe to Our Newsletter</h4>
+        <form class="newsletter-form" id="newsletterForm">
+          <label for="emailInput">Email *</label>
+          <input type="email" id="emailInput" required placeholder="" />
+          <label class="checkbox-row"><input type="checkbox" required /><span>Yes, subscribe me to your newsletter. *</span></label>
+          <button type="submit" class="btn-outline-submit">Submit</button>
+        </form>
+      </div>
+      <div class="footer-col footer-social-col">
+        <h4>Connect With Us:</h4>
+        <div class="social-row">
+          <a href="#" aria-label="LinkedIn" class="social-circle"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+          <a href="#" aria-label="Facebook" class="social-circle"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
+          <a href="#" aria-label="Twitter" class="social-circle"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 01-1.93.07 4.28 4.28 0 004 2.98 8.521 8.521 0 01-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg></a>
+        </div>
+        <p class="footer-copy">&copy; 2025 by MetaFinOps. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <button class="chat-button" type="button" aria-label="Chat"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg></button>
+
+  <script src="js/particles.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

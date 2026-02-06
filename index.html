@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MetaFinOps – AI-native FinOps Solutions</title>
-  <meta name="description" content="Empower your business with AI-native FinOps solutions. Optimize costs, streamline GPU operations, and enhance green computing." />
+  <meta name="description" content="The world's first AI-native FinOps platform. GPU cost intelligence, DevOps guardrails, and GreenOps analytics for enterprises." />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,25 +12,20 @@
 </head>
 <body>
 
-  <!-- ===== TOP BAR ===== -->
+  <!-- TOP BAR -->
   <div class="top-bar">
     <div class="top-bar-inner">
       <span></span>
-      <span>This website was created by <a href="#">MetaFinOps</a></span>
+      <span>AI-native FinOps Solutions by <a href="index.html">MetaFinOps</a></span>
     </div>
   </div>
 
-  <!-- ===== HEADER ===== -->
-  <header class="site-header" id="top">
+  <!-- HEADER -->
+  <header class="site-header">
     <div class="container header-inner">
-      <a href="#top" class="brand">
+      <a href="index.html" class="brand">
         <svg class="brand-logo" viewBox="0 0 36 36" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#6BB8FF"/>
-              <stop offset="100%" style="stop-color:#3B82F6"/>
-            </linearGradient>
-          </defs>
+          <defs><linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#6BB8FF"/><stop offset="100%" style="stop-color:#3B82F6"/></linearGradient></defs>
           <path d="M8 28 L18 6 L28 28" stroke="url(#logoGrad)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M12 20 Q18 10 24 20" stroke="url(#logoGrad)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
           <path d="M15 24 Q18 17 21 24" stroke="url(#logoGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
@@ -38,17 +33,26 @@
         <span class="brand-name">MetaFinOps</span>
       </a>
       <nav class="nav" id="mainNav">
-        <a href="#solutions">Solutions</a>
-        <a href="#vision">Vision</a>
-        <a href="#programs">Programs</a>
-        <a href="#blog">Blog</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false">Solutions <span class="chevron">&#9662;</span></button>
+          <div class="nav-dropdown-menu">
+            <a href="solutions/ai-gpu-finops.html">AI/GPU FinOps</a>
+            <a href="solutions/devops-finops.html">DevOps FinOps</a>
+            <a href="solutions/greenops.html">GreenOps</a>
+            <div class="dropdown-divider"></div>
+            <a href="use-cases.html">Use Cases</a>
+            <a href="why-metafinops.html">Why MetaFinOps</a>
+          </div>
+        </div>
+        <a href="platform.html">Platform</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
         <a href="#" class="nav-login">
-          <span class="login-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
-          </span>
+          <span class="login-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg></span>
           Log In
         </a>
-        <a href="#cta" class="btn-outline-header">Get Started</a>
+        <a href="contact.html" class="btn-outline-header">Get Started</a>
       </nav>
       <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
@@ -63,14 +67,49 @@
       <canvas id="heroCanvas" class="hero-canvas"></canvas>
       <div class="container hero-inner">
         <div class="hero-text animate-on-scroll">
-          <h1>Empower Your Business<br/>with AI-native FinOps<br/>Solutions</h1>
-          <p>Unlock the full potential of your<br/>AI infrastructure with our<br/>cutting-edge FinOps platform</p>
-          <a href="#solutions" class="btn-primary">Learn More</a>
+          <h1>FinOps for the AI<br/>&amp; GPU Era.</h1>
+          <p>Real-time visibility into cloud and GPU spend, with built-in governance and guardrails for every team.</p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+            <a href="platform.html" class="btn-primary">See the Platform</a>
+            <a href="contact.html" class="btn-outline-header" style="padding:0.75rem 1.8rem;font-size:0.95rem;">Request a Demo</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== GOVERNANCE + FEATURES ===== -->
+    <!-- ===== PROBLEM STATEMENT ===== -->
+    <section class="section governance" id="problems">
+      <div class="container">
+        <div class="governance-right animate-on-scroll" style="grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border);">
+          <article class="feature-card" style="border-bottom:none;">
+            <div class="feature-icon">
+              <svg viewBox="0 0 40 40" width="40" height="40"><path d="M20 6 L20 22" stroke="#FF6B6B" stroke-width="2.5" stroke-linecap="round"/><circle cx="20" cy="28" r="2.5" fill="#FF6B6B"/><path d="M10 34 L30 34" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round"/><path d="M14 30 L26 30" stroke="#FF6B6B" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/></svg>
+            </div>
+            <h3>Unpredictable AI Costs</h3>
+            <p>LLM training and inference costs are unpredictable and hard to attribute.</p>
+            <div class="feature-divider"></div>
+          </article>
+          <article class="feature-card" style="border-bottom:none;">
+            <div class="feature-icon">
+              <svg viewBox="0 0 40 40" width="40" height="40"><rect x="8" y="14" width="24" height="14" rx="2" stroke="#FF6B6B" stroke-width="2" fill="none"/><path d="M12 18 L12 24" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round"/><path d="M17 20 L17 24" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round"/><path d="M22 19 L22 24" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round"/><path d="M27 21 L27 24" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round"/><path d="M14 10 L26 10" stroke="#FF6B6B" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/></svg>
+            </div>
+            <h3>Idle GPU Waste</h3>
+            <p>GPU clusters sit idle while invoices keep growing.</p>
+            <div class="feature-divider"></div>
+          </article>
+          <article class="feature-card" style="border-right:none;border-bottom:none;">
+            <div class="feature-icon">
+              <svg viewBox="0 0 40 40" width="40" height="40"><circle cx="14" cy="14" r="5" stroke="#FF6B6B" stroke-width="2" fill="none"/><circle cx="26" cy="14" r="5" stroke="#FF6B6B" stroke-width="2" fill="none"/><circle cx="20" cy="26" r="5" stroke="#FF6B6B" stroke-width="2" fill="none"/><path d="M17 18 L18 22" stroke="#FF6B6B" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/><path d="M23 18 L22 22" stroke="#FF6B6B" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/></svg>
+            </div>
+            <h3>No Single Source of Truth</h3>
+            <p>Finance, Security, and Engineering don't share a single source of truth.</p>
+            <div class="feature-divider"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== THREE WEDGES ===== -->
     <section class="section governance" id="solutions">
       <div class="container governance-layout">
         <div class="governance-left animate-on-scroll">
@@ -78,65 +117,85 @@
             <canvas id="governanceCanvas" class="section-canvas"></canvas>
           </div>
           <div class="governance-text-overlay">
-            <h2>Revolutionizing AI Cost Governance</h2>
-            <p>MetaFinOps is dedicated to reshaping the landscape of AI cost management. Our mission is to empower AI-native enterprises to optimize costs, streamline GPU operations, and enhance green computing initiatives.</p>
+            <h2>One Platform.<br/>Three Powerful Solutions.</h2>
+            <p>MetaFinOps unifies AI cost intelligence, DevOps guardrails, and sustainability analytics into a single pane of glass for every stakeholder.</p>
           </div>
         </div>
-        <div class="governance-right">
-          <article class="feature-card animate-on-scroll">
+        <div class="governance-right" style="grid-template-columns:1fr;">
+          <article class="feature-card animate-on-scroll" style="border-right:none;">
             <div class="feature-icon">
               <svg viewBox="0 0 40 40" width="40" height="40"><path d="M8 32 L20 8 L32 32" stroke="#FF6B6B" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M14 24 L20 14 L26 24" stroke="#FF6B6B" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
             </div>
-            <h3>AI Cost Intelligence & Optimization</h3>
-            <p>Our platform offers advanced cloud analytics modernization specifically tailored for AI workloads. We provide comprehensive insights to help you optimize costs and maximize efficiency.</p>
+            <h3><a href="solutions/ai-gpu-finops.html" style="color:inherit;text-decoration:none;">AI/GPU Cost Intelligence</a></h3>
+            <p>Track GPU spend, model inference costs, and token usage across every provider. Attribute costs to teams, projects, and experiments with precision.</p>
             <div class="feature-divider"></div>
           </article>
-          <article class="feature-card animate-on-scroll">
+          <article class="feature-card animate-on-scroll" style="border-right:none;">
             <div class="feature-icon">
               <svg viewBox="0 0 40 40" width="40" height="40"><path d="M12 28 L20 12 L28 28 Z" stroke="#FF6B6B" stroke-width="2" fill="none"/><path d="M8 24 L20 8 L32 24" stroke="#FF6B6B" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
             </div>
-            <h3>Accelerating AI Innovation</h3>
-            <p>MetaFinOps accelerates data science and AI innovation by providing a dedicated platform for model-level cost reporting and AI workload optimization.</p>
+            <h3><a href="solutions/devops-finops.html" style="color:inherit;text-decoration:none;">DevOps Cost Guardrails</a></h3>
+            <p>Embed cost checks into CI/CD pipelines, annotate pull requests with spend impact, and preview Terraform costs before deployment.</p>
             <div class="feature-divider"></div>
           </article>
-          <article class="feature-card animate-on-scroll">
+          <article class="feature-card animate-on-scroll" style="border-right:none;border-bottom:none;">
             <div class="feature-icon">
-              <svg viewBox="0 0 40 40" width="40" height="40"><rect x="10" y="10" width="8" height="8" rx="2" stroke="#FF6B6B" stroke-width="2" fill="none"/><rect x="22" y="10" width="8" height="8" rx="2" stroke="#FF6B6B" stroke-width="2" fill="none"/><rect x="10" y="22" width="8" height="8" rx="2" stroke="#FF6B6B" stroke-width="2" fill="none"/><rect x="22" y="22" width="8" height="8" rx="2" stroke="#FF6B6B" stroke-width="2" fill="none"/></svg>
+              <svg viewBox="0 0 40 40" width="40" height="40"><circle cx="20" cy="20" r="10" stroke="#FF6B6B" stroke-width="2" fill="none"/><path d="M16 20 Q20 12 24 20" stroke="#FF6B6B" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M14 24 L26 24" stroke="#FF6B6B" stroke-width="1.5" stroke-linecap="round"/><path d="M20 14 L20 10" stroke="#FF6B6B" stroke-width="1.5" stroke-linecap="round"/></svg>
             </div>
-            <h3>Scalable Infrastructure Solutions</h3>
-            <p>At MetaFinOps, we bring unparalleled versatility to AI applications. Our solutions are designed to scale alongside your business, ensuring seamless AI infrastructure management.</p>
-            <div class="feature-divider"></div>
-          </article>
-          <article class="feature-card animate-on-scroll">
-            <div class="feature-icon">
-              <svg viewBox="0 0 40 40" width="40" height="40"><circle cx="20" cy="14" r="5" stroke="#FF6B6B" stroke-width="2" fill="none"/><path d="M12 30 Q12 22 20 22 Q28 22 28 30" stroke="#FF6B6B" stroke-width="2" fill="none"/><circle cx="30" cy="12" r="3" stroke="#FF6B6B" stroke-width="1.5" fill="none"/><circle cx="10" cy="12" r="3" stroke="#FF6B6B" stroke-width="1.5" fill="none"/></svg>
-            </div>
-            <h3>Tailored Enterprise Support</h3>
-            <p>Experience a full spectrum of customer support with MetaFinOps. Our team is committed to delivering enterprise-grade modules and DevOps integrated cost guardrails.</p>
+            <h3><a href="solutions/greenops.html" style="color:inherit;text-decoration:none;">GreenOps &amp; Sustainability</a></h3>
+            <p>Measure carbon footprint per workload, receive green region recommendations, and generate ESG-ready sustainability reports.</p>
             <div class="feature-divider"></div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ===== EMPOWERING SECTION ===== -->
-    <section class="section empowering-section" id="vision">
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="section empowering-section" id="how-it-works">
       <div class="container cta-layout">
         <div class="cta-left animate-on-scroll">
           <canvas id="empowerCanvas" class="section-canvas"></canvas>
           <div class="cta-left-text">
-            <h2>Empowering AI Enterprises with Unmatched Solutions</h2>
+            <h2>How MetaFinOps Works</h2>
           </div>
         </div>
         <div class="cta-right animate-on-scroll">
-          <p>At MetaFinOps, we offer unparalleled velocity and impeccable reliability in AI-native FinOps solutions. Our platform is designed to elevate your AI infrastructure and drive business success.</p>
-          <a href="#solutions" class="btn-primary">Learn More</a>
+          <div style="display:flex;flex-direction:column;gap:1.8rem;">
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <span style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem;">1</span>
+              <div>
+                <h4 style="font-size:1rem;font-weight:600;color:var(--heading);margin-bottom:0.3rem;">Connect</h4>
+                <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.6;margin:0;">Integrate your cloud accounts, GPU clusters, and AI platforms in minutes with pre-built connectors.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <span style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem;">2</span>
+              <div>
+                <h4 style="font-size:1rem;font-weight:600;color:var(--heading);margin-bottom:0.3rem;">Normalize</h4>
+                <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.6;margin:0;">Unify billing data, GPU telemetry, and token usage into a standardized cost model across all providers.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <span style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem;">3</span>
+              <div>
+                <h4 style="font-size:1rem;font-weight:600;color:var(--heading);margin-bottom:0.3rem;">Analyze</h4>
+                <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.6;margin:0;">ML-powered analytics detect anomalies, forecast spend, and surface optimization opportunities automatically.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <span style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem;">4</span>
+              <div>
+                <h4 style="font-size:1rem;font-weight:600;color:var(--heading);margin-bottom:0.3rem;">Act</h4>
+                <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.6;margin:0;">Enforce budgets, trigger alerts, and apply guardrails through policy-as-code with automated remediation.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ===== METRICS ===== -->
-    <section class="section metrics" id="programs">
+    <section class="section metrics" id="metrics">
       <div class="container metrics-inner animate-on-scroll">
         <h2>Experience the MetaFinOps Advantage</h2>
         <div class="metrics-grid">
@@ -187,7 +246,7 @@
             </span>
           </div>
           <div class="partner-logo">
-            <span class="partner-text garoosh">Gar<span class="dot-accent2">&</span>oosh</span>
+            <span class="partner-text garoosh">Gar<span class="dot-accent2">&amp;</span>oosh</span>
           </div>
           <div class="partner-logo">
             <span class="partner-text velocity">
@@ -198,7 +257,7 @@
       </div>
     </section>
 
-    <!-- ===== CTA SECTION ===== -->
+    <!-- ===== FINAL CTA ===== -->
     <section class="section cta-final" id="cta">
       <div class="container cta-layout">
         <div class="cta-left animate-on-scroll">
@@ -209,74 +268,55 @@
         </div>
         <div class="cta-right animate-on-scroll">
           <p>Discover the power of MetaFinOps and take your AI-native enterprise to new heights with our cutting-edge FinOps solutions.</p>
-          <a href="#contact" class="btn-primary">Get Started</a>
+          <a href="contact.html" class="btn-primary">Get Started</a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="site-footer" id="contact">
+  <!-- FOOTER -->
+  <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-col footer-brand-col">
-        <a href="#top" class="brand footer-brand">
+        <a href="index.html" class="brand footer-brand">
           <svg class="brand-logo" viewBox="0 0 36 36" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
             <path d="M8 28 L18 6 L28 28" stroke="#FF6B6B" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M12 20 Q18 10 24 20" stroke="#FF6B6B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
           </svg>
           <span class="brand-name">MetaFinOps</span>
         </a>
-        <p class="footer-contact">
-          contact@metafinops.com<br/>
-          1618 Longmoor LN SE,<br/>
-          Smyrna, GA 30080
-        </p>
+        <p class="footer-contact">contact@metafinops.com<br/>1618 Longmoor LN SE,<br/>Smyrna, GA 30080</p>
       </div>
-
       <div class="footer-col footer-links">
-        <a href="#solutions">Solutions</a>
-        <a href="#vision">Products</a>
-        <a href="#programs">Insights</a>
-        <a href="#hero">Resources</a>
-        <a href="#cta" class="btn-primary footer-cta">Get Started</a>
+        <a href="solutions/ai-gpu-finops.html">AI/GPU FinOps</a>
+        <a href="solutions/devops-finops.html">DevOps FinOps</a>
+        <a href="solutions/greenops.html">GreenOps</a>
+        <a href="platform.html">Platform</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html" class="btn-primary footer-cta">Get Started</a>
       </div>
-
       <div class="footer-col footer-newsletter">
         <h4>Subscribe to Our Newsletter</h4>
         <form class="newsletter-form" id="newsletterForm">
           <label for="emailInput">Email *</label>
           <input type="email" id="emailInput" required placeholder="" />
-          <label class="checkbox-row">
-            <input type="checkbox" required />
-            <span>Yes, subscribe me to your newsletter. *</span>
-          </label>
+          <label class="checkbox-row"><input type="checkbox" required /><span>Yes, subscribe me to your newsletter. *</span></label>
           <button type="submit" class="btn-outline-submit">Submit</button>
         </form>
       </div>
-
       <div class="footer-col footer-social-col">
         <h4>Connect With Us:</h4>
         <div class="social-row">
-          <a href="#" aria-label="LinkedIn" class="social-circle">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
-          </a>
-          <a href="#" aria-label="Facebook" class="social-circle">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
-          </a>
-          <a href="#" aria-label="Twitter" class="social-circle">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 01-1.93.07 4.28 4.28 0 004 2.98 8.521 8.521 0 01-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg>
-          </a>
+          <a href="#" aria-label="LinkedIn" class="social-circle"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+          <a href="#" aria-label="Facebook" class="social-circle"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
+          <a href="#" aria-label="Twitter" class="social-circle"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 01-1.93.07 4.28 4.28 0 004 2.98 8.521 8.521 0 01-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg></a>
         </div>
         <p class="footer-copy">&copy; 2025 by MetaFinOps. All rights reserved.</p>
       </div>
     </div>
   </footer>
-
-  <!-- ===== CHAT BUTTON ===== -->
-  <button class="chat-button" type="button" aria-label="Chat">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
-  </button>
+  <button class="chat-button" type="button" aria-label="Chat"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg></button>
 
   <script src="js/particles.js"></script>
   <script src="js/main.js"></script>

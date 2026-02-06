@@ -109,13 +109,86 @@ img { max-width: 100%; display: block; }
   font-size: 0.9rem;
 }
 
-.nav > a {
+.nav > a,
+.nav-dropdown > .nav-dropdown-toggle {
   color: var(--text-muted);
   transition: color var(--transition);
   position: relative;
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
 }
 
-.nav > a:hover { color: var(--heading); }
+.nav > a:hover,
+.nav-dropdown > .nav-dropdown-toggle:hover { color: var(--heading); }
+
+.nav > a.active { color: var(--heading); font-weight: 500; }
+
+/* ── Dropdown Menu ── */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.nav-dropdown-toggle .chevron {
+  font-size: 0.6rem;
+  transition: transform var(--transition);
+}
+
+.nav-dropdown:hover .chevron,
+.nav-dropdown:focus-within .chevron {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.8rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10, 11, 16, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.5rem 0;
+  min-width: 210px;
+  z-index: 200;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  display: block;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.nav-dropdown-menu a:hover {
+  color: var(--heading);
+  background: rgba(255,255,255,0.03);
+}
+
+.nav-dropdown-menu .dropdown-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0.4rem 0;
+}
 
 .nav-login {
   display: inline-flex;
@@ -791,6 +864,21 @@ img { max-width: 100%; display: block; }
     gap: 1rem;
     z-index: 99;
   }
+
+  .nav.active .nav-dropdown-menu {
+    display: block;
+    position: static;
+    transform: none;
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0 0 0 1rem;
+    min-width: auto;
+  }
+
+  .nav.active .nav-dropdown-toggle .chevron { display: none; }
 
   .hero { min-height: 70vh; }
 
