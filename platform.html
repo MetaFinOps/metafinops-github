@@ -157,49 +157,110 @@
     </section>
 
     <!-- ===== ARCHITECTURE ===== -->
-    <section class="section animate-on-scroll">
-      <div class="container solution-split">
-        <div class="split-left">
+    <section class="section animate-on-scroll" style="padding:5rem 0;">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:3.5rem;">
           <span class="section-label">ARCHITECTURE</span>
-          <h2>How Data Flows Through MetaFinOps</h2>
-          <p>The MetaFinOps platform operates on a 5-layer pipeline architecture that transforms raw cloud and GPU data into actionable intelligence.</p>
-          <p>Data is ingested from cloud providers, normalized into a unified cost model, enriched with carbon and utilization metadata, processed through our ML analytics engine, and delivered through interactive dashboards and APIs.</p>
-          <p>Each layer is independently scalable and designed for enterprise-grade reliability, ensuring sub-minute data freshness across all connected sources.</p>
+          <h2 style="font-size:1.8rem;font-weight:600;color:var(--heading);margin-top:1rem;letter-spacing:-0.01em;">How Data Flows Through MetaFinOps</h2>
+          <p style="color:var(--text-muted);font-size:0.95rem;max-width:640px;margin:0.8rem auto 0;line-height:1.7;">A 5-layer pipeline that transforms raw cloud and GPU data into actionable intelligence — each layer independently scalable with sub-minute data freshness.</p>
         </div>
-        <div class="split-right">
-          <div class="architecture-diagram">
-&#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;
-&#9474;        CLOUD PROVIDERS            &#9474;
-&#9474;   AWS  |  GCP  |  Azure  |  K8s   &#9474;
-&#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;
-                 &#9474;
-                 &#9660;
-&#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;
-&#9474;        DATA INGESTION             &#9474;
-&#9474;  Billing APIs | GPU Telemetry     &#9474;
-&#9474;  Token Logs   | Usage Metrics     &#9474;
-&#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;
-                 &#9474;
-                 &#9660;
-&#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;
-&#9474;   ENRICHMENT &amp; CARBON MAPPING    &#9474;
-&#9474;  Cost Normalization | CO2e Calc   &#9474;
-&#9474;  Tag Enrichment    | Attribution  &#9474;
-&#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;
-                 &#9474;
-                 &#9660;
-&#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;
-&#9474;     ANALYTICS &amp; ML ENGINE        &#9474;
-&#9474;  Anomaly Detection | Forecasting  &#9474;
-&#9474;  Recommendations   | Scoring      &#9474;
-&#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;
-                 &#9474;
-                 &#9660;
-&#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;
-&#9474;    VISUALIZATION &amp; APIs          &#9474;
-&#9474;  Dashboards  | REST API | Alerts  &#9474;
-&#9474;  Reports     | Webhooks | Slack   &#9474;
-&#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;</div>
+
+        <!-- Architecture Flow -->
+        <div class="arch-flow">
+          <!-- Layer 1 -->
+          <div class="arch-layer">
+            <div class="arch-layer-number">1</div>
+            <div class="arch-layer-card">
+              <div class="arch-layer-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
+              </div>
+              <h4>Cloud Providers</h4>
+              <p>Multi-cloud data ingestion from all major providers</p>
+              <div class="arch-tags">
+                <span>AWS</span><span>GCP</span><span>Azure</span><span>Kubernetes</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connector -->
+          <div class="arch-connector">
+            <svg width="24" height="40" viewBox="0 0 24 40" fill="none"><path d="M12 0v40" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 3"/><path d="M6 34l6 6 6-6" stroke="var(--accent)" stroke-width="2" fill="none"/></svg>
+          </div>
+
+          <!-- Layer 2 -->
+          <div class="arch-layer">
+            <div class="arch-layer-number">2</div>
+            <div class="arch-layer-card">
+              <div class="arch-layer-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+              </div>
+              <h4>Data Ingestion</h4>
+              <p>Real-time streaming with API connectors and webhooks</p>
+              <div class="arch-tags">
+                <span>Billing APIs</span><span>GPU Telemetry</span><span>Token Logs</span><span>Usage Metrics</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connector -->
+          <div class="arch-connector">
+            <svg width="24" height="40" viewBox="0 0 24 40" fill="none"><path d="M12 0v40" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 3"/><path d="M6 34l6 6 6-6" stroke="var(--accent)" stroke-width="2" fill="none"/></svg>
+          </div>
+
+          <!-- Layer 3 -->
+          <div class="arch-layer">
+            <div class="arch-layer-number">3</div>
+            <div class="arch-layer-card">
+              <div class="arch-layer-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </div>
+              <h4>Enrichment &amp; Carbon Mapping</h4>
+              <p>Normalize costs, enrich tags, and calculate carbon footprint</p>
+              <div class="arch-tags">
+                <span>Cost Normalization</span><span>CO2e Calc</span><span>Tag Enrichment</span><span>Attribution</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connector -->
+          <div class="arch-connector">
+            <svg width="24" height="40" viewBox="0 0 24 40" fill="none"><path d="M12 0v40" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 3"/><path d="M6 34l6 6 6-6" stroke="var(--accent)" stroke-width="2" fill="none"/></svg>
+          </div>
+
+          <!-- Layer 4 -->
+          <div class="arch-layer">
+            <div class="arch-layer-number">4</div>
+            <div class="arch-layer-card">
+              <div class="arch-layer-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg>
+              </div>
+              <h4>Analytics &amp; ML Engine</h4>
+              <p>AI-powered anomaly detection, forecasting, and recommendations</p>
+              <div class="arch-tags">
+                <span>Anomaly Detection</span><span>Forecasting</span><span>Recommendations</span><span>Scoring</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connector -->
+          <div class="arch-connector">
+            <svg width="24" height="40" viewBox="0 0 24 40" fill="none"><path d="M12 0v40" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 3"/><path d="M6 34l6 6 6-6" stroke="var(--accent)" stroke-width="2" fill="none"/></svg>
+          </div>
+
+          <!-- Layer 5 -->
+          <div class="arch-layer">
+            <div class="arch-layer-number">5</div>
+            <div class="arch-layer-card">
+              <div class="arch-layer-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <h4>Visualization &amp; APIs</h4>
+              <p>Interactive dashboards, REST API, and real-time alerts</p>
+              <div class="arch-tags">
+                <span>Dashboards</span><span>REST API</span><span>Alerts</span><span>Webhooks</span><span>Slack</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

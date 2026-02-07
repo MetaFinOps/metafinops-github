@@ -218,6 +218,181 @@
   margin: 2rem 0;
 }
 
+/* ── Architecture Flow (Platform page - vertical) ── */
+.arch-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.arch-layer {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+}
+
+.arch-layer-number {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #111;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.2rem;
+}
+
+.arch-layer-card {
+  flex: 1;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.arch-layer-card:hover {
+  border-color: rgba(255,107,107,0.3);
+  box-shadow: 0 4px 20px rgba(255,107,107,0.08);
+}
+
+.arch-layer-icon {
+  margin-bottom: 0.6rem;
+}
+
+.arch-layer-card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--heading);
+  margin-bottom: 0.3rem;
+}
+
+.arch-layer-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+}
+
+.arch-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.arch-tags span {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.arch-connector {
+  display: flex;
+  justify-content: center;
+  padding: 0.3rem 0;
+  margin-left: 16px;
+}
+
+/* ── Pipeline Flow (Cloud Cost Opt - horizontal) ── */
+.pipeline-flow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.pipeline-stage {
+  flex: 1;
+  min-width: 160px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1.2rem 1rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.pipeline-stage:hover {
+  border-color: rgba(255,107,107,0.3);
+  box-shadow: 0 4px 20px rgba(255,107,107,0.08);
+}
+
+.pipeline-stage-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.pipeline-stage-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #111;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pipeline-stage h4 {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--heading);
+  margin-bottom: 0.5rem;
+}
+
+.pipeline-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.pipeline-details li {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding-left: 0.9rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.pipeline-details li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.pipeline-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0 0.3rem;
+  align-self: center;
+}
+
 /* ── Code Block ── */
 .code-block {
   background: #0c0d14;
@@ -510,6 +685,20 @@
   .step-item:nth-child(2) { border-right: none; }
   .step-item:nth-child(1),
   .step-item:nth-child(2) { border-bottom: 1px solid var(--border); }
+
+  /* Pipeline flow - wrap on tablet */
+  .pipeline-flow {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .pipeline-stage {
+    min-width: calc(33% - 1rem);
+    flex: 0 0 calc(33% - 1rem);
+  }
+  .pipeline-arrow {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -526,6 +715,17 @@
   .step-item { border-right: none !important; border-bottom: 1px solid var(--border); }
   .step-item:last-child { border-bottom: none; }
   .split-left, .split-right { padding: 2rem 1.5rem; }
+
+  /* Pipeline flow - stack on mobile */
+  .pipeline-stage {
+    min-width: 100%;
+    flex: 0 0 100%;
+  }
+
+  /* Arch flow - full width cards */
+  .arch-layer-card {
+    padding: 1rem 1.2rem;
+  }
 }
 
 @media (max-width: 480px) {
