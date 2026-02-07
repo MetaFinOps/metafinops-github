@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://metafinops.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://metafinops.com/platform.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://metafinops.com/pricing.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://metafinops.com/contact.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://metafinops.com/about.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://metafinops.com/solutions/cloud-cost-optimization.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://metafinops.com/solutions/ai-gpu-finops.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://metafinops.com/solutions/token-cost-intelligence.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://metafinops.com/solutions/devops-finops.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://metafinops.com/solutions/greenops.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://metafinops.com/use-cases.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://metafinops.com/why-metafinops.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://metafinops.com/blog.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://metafinops.com/roadmap.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://metafinops.com/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://metafinops.com/terms.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+</urlset>
