@@ -766,6 +766,19 @@ img { max-width: 100%; display: block; }
 }
 
 /* ============================================================
+   FEATURE CATEGORY PILLS (Homepage)
+   ============================================================ */
+.feature-cat-row a:hover {
+  border-color: var(--accent) !important;
+  background: var(--accent-soft) !important;
+}
+
+/* New footer link hovers */
+.site-footer a:not(.btn-primary):not(.brand):not(.social-circle):hover {
+  color: var(--heading) !important;
+}
+
+/* ============================================================
    CHAT BUTTON
    ============================================================ */
 .chat-button {
@@ -845,6 +858,17 @@ img { max-width: 100%; display: block; }
   .footer-inner {
     grid-template-columns: 1fr 1fr;
   }
+
+  /* Feature category rows responsive - tablet */
+  .feature-cat-row {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  /* New 4-column footer → 2 columns on tablet */
+  .site-footer > .container:first-child {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -911,6 +935,20 @@ img { max-width: 100%; display: block; }
 
   .footer-inner {
     grid-template-columns: 1fr;
+  }
+
+  /* New 4-column footer → single column on mobile */
+  .site-footer > .container:first-child {
+    grid-template-columns: 1fr !important;
+    padding: 2.5rem 1.5rem 1.5rem !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Footer bottom bar stack on mobile */
+  .site-footer > .container:last-child {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 1.2rem 1.5rem !important;
   }
 }
 
