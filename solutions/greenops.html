@@ -97,13 +97,85 @@
 
     <section class="section animate-on-scroll" style="padding:4rem 0;">
       <div class="container">
-        <h2 style="font-size:1.6rem;font-weight:600;color:var(--heading);margin-bottom:2rem;text-align:center;">Architecture</h2>
-        <div class="architecture-diagram">
-Cloud Carbon APIs       Carbon Mapping Layer      Analytics Engine        GreenOps Dashboard
-  - AWS CCF        -->   - Region intensity   -->  - Cost + CO2e     -->  - Unified metrics
-  - GCP Carbon           - Workload mapping        - Trade-offs           - Recommendations
-  - Azure EMI            - Scope 2 & 3             - Forecasting          - ESG reports
-  - Grid intensity       - SKU to CO2e             - What-if sims         - Sustainability score</div>
+        <h2 style="font-size:1.6rem;font-weight:600;color:var(--heading);margin-bottom:0.8rem;text-align:center;">Architecture</h2>
+        <p style="color:var(--text-muted);text-align:center;margin-bottom:2.5rem;font-size:0.95rem;">From cloud carbon data to actionable sustainability insights in four stages.</p>
+
+        <div class="pipeline-flow">
+          <!-- Stage 1 -->
+          <div class="pipeline-stage">
+            <div class="pipeline-stage-header">
+              <div class="pipeline-stage-num">1</div>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
+            </div>
+            <h4>Cloud Carbon APIs</h4>
+            <ul class="pipeline-details">
+              <li>AWS CCF</li>
+              <li>GCP Carbon</li>
+              <li>Azure EMI</li>
+              <li>Grid intensity</li>
+            </ul>
+          </div>
+
+          <!-- Arrow -->
+          <div class="pipeline-arrow">
+            <svg width="32" height="24" viewBox="0 0 32 24" fill="none"><path d="M0 12h28" stroke="var(--accent)" stroke-width="2"/><path d="M22 6l6 6-6 6" stroke="var(--accent)" stroke-width="2" fill="none"/></svg>
+          </div>
+
+          <!-- Stage 2 -->
+          <div class="pipeline-stage">
+            <div class="pipeline-stage-header">
+              <div class="pipeline-stage-num">2</div>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <h4>Carbon Mapping Layer</h4>
+            <ul class="pipeline-details">
+              <li>Region intensity</li>
+              <li>Workload mapping</li>
+              <li>Scope 2 &amp; 3</li>
+              <li>SKU to CO2e</li>
+            </ul>
+          </div>
+
+          <!-- Arrow -->
+          <div class="pipeline-arrow">
+            <svg width="32" height="24" viewBox="0 0 32 24" fill="none"><path d="M0 12h28" stroke="var(--accent)" stroke-width="2"/><path d="M22 6l6 6-6 6" stroke="var(--accent)" stroke-width="2" fill="none"/></svg>
+          </div>
+
+          <!-- Stage 3 -->
+          <div class="pipeline-stage">
+            <div class="pipeline-stage-header">
+              <div class="pipeline-stage-num">3</div>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg>
+            </div>
+            <h4>Analytics Engine</h4>
+            <ul class="pipeline-details">
+              <li>Cost + CO2e</li>
+              <li>Trade-offs</li>
+              <li>Forecasting</li>
+              <li>What-if sims</li>
+            </ul>
+          </div>
+
+          <!-- Arrow -->
+          <div class="pipeline-arrow">
+            <svg width="32" height="24" viewBox="0 0 32 24" fill="none"><path d="M0 12h28" stroke="var(--accent)" stroke-width="2"/><path d="M22 6l6 6-6 6" stroke="var(--accent)" stroke-width="2" fill="none"/></svg>
+          </div>
+
+          <!-- Stage 4 -->
+          <div class="pipeline-stage">
+            <div class="pipeline-stage-header">
+              <div class="pipeline-stage-num">4</div>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h4>GreenOps Dashboard</h4>
+            <ul class="pipeline-details">
+              <li>Unified metrics</li>
+              <li>Recommendations</li>
+              <li>ESG reports</li>
+              <li>Sustainability score</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
