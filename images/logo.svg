@@ -1,15 +1,27 @@
-<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 44 40" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="mfGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+    <linearGradient id="mfBrand" x1="0%" y1="100%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#0D9488"/>
       <stop offset="50%" stop-color="#2DD4BF"/>
       <stop offset="100%" stop-color="#5EEAD4"/>
     </linearGradient>
   </defs>
-  <!-- M shape -->
-  <path d="M6 32 L6 10 L14 22 L20 10 L26 22 L34 10 L34 32" stroke="url(#mfGrad)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- Leaf overlay on right stroke -->
-  <path d="M28 8 C28 8 34 10 34 18 C34 22 31 24 28 24 C31 20 30 14 28 8 Z" fill="url(#mfGrad)" opacity="0.85"/>
-  <!-- Leaf vein -->
-  <path d="M29.5 11 C29.5 15 30 19 28.5 22.5" stroke="#0a0b10" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+  <!-- M letterform - left stroke -->
+  <path d="M4 34 C4 34 4 8 4 8 C4 6 5 5 7 5 C9 5 10 6 10 8 L10 22" stroke="url(#mfBrand)" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- M letterform - left valley -->
+  <path d="M10 22 L17 10" stroke="url(#mfBrand)" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- M letterform - center peak to right valley -->
+  <path d="M17 10 L24 22" stroke="url(#mfBrand)" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- M letterform - right stroke going up -->
+  <path d="M24 22 L30 10" stroke="url(#mfBrand)" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- M letterform - right descender -->
+  <path d="M30 10 L30 34" stroke="url(#mfBrand)" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Leaf shape emerging from right side -->
+  <path d="M30 6 C34 4 40 6 40 14 C40 22 34 26 28 28 C32 22 34 16 32 8 C31.5 6.5 30.5 5.5 30 6 Z" fill="url(#mfBrand)" opacity="0.9"/>
+  <!-- Leaf center vein -->
+  <path d="M31 8 C32 12 33 18 29 26" stroke="#0a0b10" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.4"/>
+  <!-- Leaf side veins -->
+  <path d="M33 11 L31 14" stroke="#0a0b10" stroke-width="0.6" fill="none" stroke-linecap="round" opacity="0.3"/>
+  <path d="M35 14 L32 18" stroke="#0a0b10" stroke-width="0.6" fill="none" stroke-linecap="round" opacity="0.3"/>
+  <path d="M35 18 L31 22" stroke="#0a0b10" stroke-width="0.6" fill="none" stroke-linecap="round" opacity="0.3"/>
 </svg>
