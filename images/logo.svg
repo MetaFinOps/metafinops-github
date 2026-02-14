@@ -1,0 +1,15 @@
+<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mfGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0D9488"/>
+      <stop offset="50%" stop-color="#2DD4BF"/>
+      <stop offset="100%" stop-color="#5EEAD4"/>
+    </linearGradient>
+  </defs>
+  <!-- M shape -->
+  <path d="M6 32 L6 10 L14 22 L20 10 L26 22 L34 10 L34 32" stroke="url(#mfGrad)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Leaf overlay on right stroke -->
+  <path d="M28 8 C28 8 34 10 34 18 C34 22 31 24 28 24 C31 20 30 14 28 8 Z" fill="url(#mfGrad)" opacity="0.85"/>
+  <!-- Leaf vein -->
+  <path d="M29.5 11 C29.5 15 30 19 28.5 22.5" stroke="#0a0b10" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+</svg>
