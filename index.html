@@ -25,6 +25,405 @@
     <div class="container header-inner">
       <a href="index.html" class="brand">
         <img class="brand-logo" src="images/logo-icon-transparent.png" alt="MetaFinOps" width="36" height="33" style="height:33px;width:auto;">
+        <span class="brand-name">MetaFinOps</span>
+      </a>
+      <nav class="nav" id="mainNav">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false">Solutions <span class="chevron">&#9662;</span></button>
+          <div class="nav-dropdown-menu">
+            <a href="solutions/cloud-cost-optimization.html">Cloud Cost Optimization</a>
+            <a href="solutions/ai-gpu-finops.html">AI/GPU FinOps</a>
+            <a href="solutions/token-cost-intelligence.html">Token Cost Intelligence</a>
+            <a href="solutions/devops-finops.html">DevOps FinOps</a>
+            <a href="solutions/greenops.html">GreenOps</a>
+            <div class="dropdown-divider"></div>
+            <a href="use-cases.html">Use Cases</a>
+            <a href="why-metafinops.html">Why MetaFinOps</a>
+          </div>
+        </div>
+        <a href="platform.html">Platform</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="#" class="nav-login">
+          <span class="login-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg></span>
+          Log In
+        </a>
+        <a href="contact.html" class="btn-outline-header">Get Started</a>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+      <canvas id="heroCanvas" class="hero-canvas"></canvas>
+      <div class="container hero-inner">
+        <div class="hero-text animate-on-scroll">
+          <h1>Cloud Cost Optimization<br/>for the AI &amp; GPU Era.</h1>
+          <p>The AI-native FinOps platform for GPU cost attribution, token cost intelligence, AI workload optimization, and DevOps-integrated cost guardrails.</p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+            <a href="platform.html" class="btn-primary">See the Platform</a>
+            <a href="contact.html" class="btn-outline-header" style="padding:0.75rem 1.8rem;font-size:0.95rem;">Request a Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROBLEM STATEMENT ===== -->
+    <section class="section governance" id="problems">
+      <div class="container">
+        <div class="governance-right animate-on-scroll" style="grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border);">
+          <article class="feature-card" style="border-bottom:none;">
+            <div class="feature-icon">
+              <svg viewBox="0 0 40 40" width="40" height="40"><path d="M20 6 L20 22" stroke="#FF6B6B" stroke-width="2.5" stroke-linecap="round"/><circle cx="20" cy="28" r="2.5" fill="#FF6B6B"/><path d="M10 34 L30 34" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round"/><path d="M14 30 L26 30" stroke="#FF6B6B" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/></svg>
+            </div>
+            <h3>Unpredictable AI Costs</h3>
+            <p>LLM training and inference costs are unpredictable and hard to attribute.</p>
+            <div class="feature-divider"></div>
+          </article>
+          <article class="feature-card" style="border-bottom:none;">
+            <div class="feature-icon">
+              <svg viewBox="0 0 40 40" width="40" height="40"><rect x="8" y="14" width="24" height="14" rx="2" stroke="#FF6B6B" stroke-width="2" fill="none"/><path d="M12 18 L12 24" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round"/><path d="M17 20 L17 24" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round"/><path d="M22 19 L22 24" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round"/><path d="M27 21 L27 24" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round"/><path d="M14 10 L26 10" stroke="#FF6B6B" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/></svg>
+            </div>
+            <h3>Idle GPU Waste</h3>
+            <p>GPU clusters sit idle while invoices keep growing.</p>
+            <div class="feature-divider"></div>
+          </article>
+          <article class="feature-card" style="border-right:none;border-bottom:none;">
+            <div class="feature-icon">
+              <svg viewBox="0 0 40 40" width="40" height="40"><circle cx="14" cy="14" r="5" stroke="#FF6B6B" stroke-width="2" fill="none"/><circle cx="26" cy="14" r="5" stroke="#FF6B6B" stroke-width="2" fill="none"/><circle cx="20" cy="26" r="5" stroke="#FF6B6B" stroke-width="2" fill="none"/><path d="M17 18 L18 22" stroke="#FF6B6B" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/><path d="M23 18 L22 22" stroke="#FF6B6B" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/></svg>
+            </div>
+            <h3>No Single Source of Truth</h3>
+            <p>Finance, Security, and Engineering don't share a single source of truth.</p>
+            <div class="feature-divider"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== THREE WEDGES ===== -->
+    <section class="section governance" id="solutions">
+      <div class="container governance-layout">
+        <div class="governance-left animate-on-scroll">
+          <div class="governance-bg-image">
+            <canvas id="governanceCanvas" class="section-canvas"></canvas>
+          </div>
+          <div class="governance-text-overlay">
+            <h2>One Platform.<br/>Five Powerful Pillars.</h2>
+            <p>MetaFinOps unifies cloud cost optimization, GPU attribution, token intelligence, DevOps guardrails, and sustainability analytics into a single platform.</p>
+          </div>
+        </div>
+        <div class="governance-right" style="grid-template-columns:1fr;">
+          <article class="feature-card animate-on-scroll" style="border-right:none;">
+            <div class="feature-icon">
+              <svg viewBox="0 0 40 40" width="40" height="40"><path d="M6 30 L14 14 L22 24 L30 10 L34 18" stroke="#FF6B6B" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 34 L34 34" stroke="#FF6B6B" stroke-width="1.5" opacity="0.4"/></svg>
+            </div>
+            <h3><a href="solutions/cloud-cost-optimization.html" style="color:inherit;text-decoration:none;">Cloud Cost Optimization</a></h3>
+            <p>Multi-cloud cost visibility, anomaly detection, RI/SP optimization, budget alerts, and chargeback workflows across AWS, GCP, and Azure.</p>
+            <div class="feature-divider"></div>
+          </article>
+          <article class="feature-card animate-on-scroll" style="border-right:none;">
+            <div class="feature-icon">
+              <svg viewBox="0 0 40 40" width="40" height="40"><path d="M8 32 L20 8 L32 32" stroke="#FF6B6B" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M14 24 L20 14 L26 24" stroke="#FF6B6B" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </div>
+            <h3><a href="solutions/ai-gpu-finops.html" style="color:inherit;text-decoration:none;">AI/GPU Cost Attribution</a></h3>
+            <p>Track GPU spend, idle utilization, model-level costs, and AI workload optimization across every cluster and provider.</p>
+            <div class="feature-divider"></div>
+          </article>
+          <article class="feature-card animate-on-scroll" style="border-right:none;">
+            <div class="feature-icon">
+              <svg viewBox="0 0 40 40" width="40" height="40"><path d="M10 28 L16 16 L22 22 L28 12" stroke="#FF6B6B" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="20" cy="20" r="2" fill="#FF6B6B"/><path d="M8 32 L32 32" stroke="#FF6B6B" stroke-width="1.5" opacity="0.3"/><path d="M14 8 L14 12" stroke="#FF6B6B" stroke-width="1.5" stroke-linecap="round"/><path d="M20 6 L20 10" stroke="#FF6B6B" stroke-width="1.5" stroke-linecap="round"/><path d="M26 8 L26 12" stroke="#FF6B6B" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3><a href="solutions/token-cost-intelligence.html" style="color:inherit;text-decoration:none;">Token Cost Intelligence</a></h3>
+            <p>Per-provider token tracking, cost-per-conversation analytics, prompt optimization, and multi-model cost comparison across OpenAI, Anthropic, and more.</p>
+            <div class="feature-divider"></div>
+          </article>
+          <article class="feature-card animate-on-scroll" style="border-right:none;">
+            <div class="feature-icon">
+              <svg viewBox="0 0 40 40" width="40" height="40"><path d="M12 28 L20 12 L28 28 Z" stroke="#FF6B6B" stroke-width="2" fill="none"/><path d="M8 24 L20 8 L32 24" stroke="#FF6B6B" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </div>
+            <h3><a href="solutions/devops-finops.html" style="color:inherit;text-decoration:none;">DevOps Cost Guardrails</a></h3>
+            <p>Embed cost checks into CI/CD pipelines, annotate pull requests with spend impact, and enforce budget policies before deployment.</p>
+            <div class="feature-divider"></div>
+          </article>
+          <article class="feature-card animate-on-scroll" style="border-right:none;border-bottom:none;">
+            <div class="feature-icon">
+              <svg viewBox="0 0 40 40" width="40" height="40"><circle cx="20" cy="20" r="10" stroke="#FF6B6B" stroke-width="2" fill="none"/><path d="M16 20 Q20 12 24 20" stroke="#FF6B6B" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M14 24 L26 24" stroke="#FF6B6B" stroke-width="1.5" stroke-linecap="round"/><path d="M20 14 L20 10" stroke="#FF6B6B" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3><a href="solutions/greenops.html" style="color:inherit;text-decoration:none;">GreenOps &amp; Sustainability</a></h3>
+            <p>Measure carbon footprint per workload, receive green region recommendations, and generate ESG-ready sustainability reports.</p>
+            <div class="feature-divider"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="section empowering-section" id="how-it-works">
+      <div class="container cta-layout">
+        <div class="cta-left animate-on-scroll">
+          <canvas id="empowerCanvas" class="section-canvas"></canvas>
+          <div class="cta-left-text">
+            <h2>How MetaFinOps Works</h2>
+          </div>
+        </div>
+        <div class="cta-right animate-on-scroll">
+          <div style="display:flex;flex-direction:column;gap:1.8rem;">
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <span style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem;">1</span>
+              <div>
+                <h4 style="font-size:1rem;font-weight:600;color:var(--heading);margin-bottom:0.3rem;">Connect</h4>
+                <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.6;margin:0;">Integrate your cloud accounts, GPU clusters, and AI platforms in minutes with pre-built connectors.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <span style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem;">2</span>
+              <div>
+                <h4 style="font-size:1rem;font-weight:600;color:var(--heading);margin-bottom:0.3rem;">Normalize</h4>
+                <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.6;margin:0;">Unify billing data, GPU telemetry, and token usage into a standardized cost model across all providers.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <span style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem;">3</span>
+              <div>
+                <h4 style="font-size:1rem;font-weight:600;color:var(--heading);margin-bottom:0.3rem;">Analyze</h4>
+                <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.6;margin:0;">ML-powered analytics detect anomalies, forecast spend, and surface optimization opportunities automatically.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <span style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem;">4</span>
+              <div>
+                <h4 style="font-size:1rem;font-weight:600;color:var(--heading);margin-bottom:0.3rem;">Act</h4>
+                <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.6;margin:0;">Enforce budgets, trigger alerts, and apply guardrails through policy-as-code with automated remediation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURE CATEGORIES ===== -->
+    <section class="section" style="padding:4rem 0;border-bottom:1px solid var(--border);">
+      <div class="container">
+
+        <!-- Find Immediate Savings -->
+        <div class="animate-on-scroll feature-cat-row" style="display:grid;grid-template-columns:280px 1fr;gap:3rem;align-items:start;padding:3rem 0;border-bottom:1px solid var(--border);">
+          <h3 style="font-size:1.3rem;font-weight:600;color:var(--heading);line-height:1.4;">Find immediate savings</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:0.8rem;">
+            <a href="solutions/cloud-cost-optimization.html" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.6rem 1.2rem;border:1px solid var(--card-border);border-radius:10px;font-size:0.88rem;color:var(--text);transition:all var(--transition);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              Autopilot (Buying of Savings Plans)
+            </a>
+            <a href="solutions/cloud-cost-optimization.html" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.6rem 1.2rem;border:1px solid var(--card-border);border-radius:10px;font-size:0.88rem;color:var(--text);transition:all var(--transition);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M6 12h12"/></svg>
+              Cost Recommendations
+            </a>
+            <a href="solutions/ai-gpu-finops.html" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.6rem 1.2rem;border:1px solid var(--card-border);border-radius:10px;font-size:0.88rem;color:var(--text);transition:all var(--transition);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg>
+              Kubernetes Rightsizing
+            </a>
+            <a href="solutions/cloud-cost-optimization.html" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.6rem 1.2rem;border:1px solid var(--card-border);border-radius:10px;font-size:0.88rem;color:var(--text);transition:all var(--transition);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              Cross-Provider Recommendations
+            </a>
+          </div>
+        </div>
+
+        <!-- Eliminate Cost Overruns -->
+        <div class="animate-on-scroll feature-cat-row" style="display:grid;grid-template-columns:280px 1fr;gap:3rem;align-items:start;padding:3rem 0;border-bottom:1px solid var(--border);">
+          <h3 style="font-size:1.3rem;font-weight:600;color:var(--heading);line-height:1.4;">Eliminate cost overruns</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:0.8rem;">
+            <a href="solutions/cloud-cost-optimization.html" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.6rem 1.2rem;border:1px solid var(--card-border);border-radius:10px;font-size:0.88rem;color:var(--text);transition:all var(--transition);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              Anomaly Detection
+            </a>
+            <a href="solutions/cloud-cost-optimization.html" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.6rem 1.2rem;border:1px solid var(--card-border);border-radius:10px;font-size:0.88rem;color:var(--text);transition:all var(--transition);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fb923c" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v4l3 3"/></svg>
+              Custom Cost Alerts
+            </a>
+            <a href="solutions/devops-finops.html" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.6rem 1.2rem;border:1px solid var(--card-border);border-radius:10px;font-size:0.88rem;color:var(--text);transition:all var(--transition);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M2 9h20M10 3v18"/></svg>
+              Budget Alerts
+            </a>
+          </div>
+        </div>
+
+        <!-- Build a FinOps Culture -->
+        <div class="animate-on-scroll feature-cat-row" style="display:grid;grid-template-columns:280px 1fr;gap:3rem;align-items:start;padding:3rem 0;">
+          <h3 style="font-size:1.3rem;font-weight:600;color:var(--heading);line-height:1.4;">Build a FinOps culture</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:0.8rem;">
+            <a href="solutions/cloud-cost-optimization.html" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.6rem 1.2rem;border:1px solid var(--card-border);border-radius:10px;font-size:0.88rem;color:var(--text);transition:all var(--transition);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+              Virtual Tagging
+            </a>
+            <a href="platform.html" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.6rem 1.2rem;border:1px solid var(--card-border);border-radius:10px;font-size:0.88rem;color:var(--text);transition:all var(--transition);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              Network Flow Reports
+            </a>
+            <a href="solutions/token-cost-intelligence.html" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.6rem 1.2rem;border:1px solid var(--card-border);border-radius:10px;font-size:0.88rem;color:var(--text);transition:all var(--transition);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+              Unit Costs
+            </a>
+            <a href="solutions/devops-finops.html" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.6rem 1.2rem;border:1px solid var(--card-border);border-radius:10px;font-size:0.88rem;color:var(--text);transition:all var(--transition);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M2 9h20M10 3v18"/></svg>
+              Budgets
+            </a>
+            <a href="solutions/cloud-cost-optimization.html" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.6rem 1.2rem;border:1px solid var(--card-border);border-radius:10px;font-size:0.88rem;color:var(--text);transition:all var(--transition);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              Financial Commitment Reports
+            </a>
+            <a href="platform.html" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.6rem 1.2rem;border:1px solid var(--card-border);border-radius:10px;font-size:0.88rem;color:var(--text);transition:all var(--transition);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4" stroke="#e11d48" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="#3b82f6" stroke-width="2"/><circle cx="17" cy="12" r="4" stroke="#22c55e" stroke-width="2"/></svg>
+              Slack, Jira, Microsoft Teams Integrations
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== METRICS ===== -->
+    <section class="section metrics" id="metrics">
+      <div class="container metrics-inner animate-on-scroll">
+        <h2>Experience the MetaFinOps Advantage</h2>
+        <div class="metrics-grid">
+          <div class="metric-item">
+            <div class="metric-value" data-target="35" data-suffix="%">0</div>
+            <div class="metric-label">Avg. GPU Cost Reduction</div>
+            <div class="metric-divider"></div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-value" data-target="10" data-suffix="M+">0</div>
+            <div class="metric-label">Cloud Spend Optimized</div>
+            <div class="metric-divider"></div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-value" data-target="100" data-suffix="M+">0</div>
+            <div class="metric-label">Tokens Tracked Daily</div>
+            <div class="metric-divider"></div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-value" data-target="5">0</div>
+            <div class="metric-label">Cloud Providers Supported</div>
+            <div class="metric-divider"></div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-value" data-target="60" data-suffix="%">0</div>
+            <div class="metric-label">Faster Cost Reviews</div>
+            <div class="metric-divider"></div>
+          </div>
+        </div>
+      </div>
+      <canvas id="metricsCanvas" class="metrics-bg-canvas"></canvas>
+    </section>
+
+    <!-- ===== TRUSTED COLLABORATIONS ===== -->
+    <section class="section trusted">
+      <div class="container trusted-inner animate-on-scroll">
+        <div class="trusted-header">
+          <h3>Technology<br/>Partners</h3>
+        </div>
+        <div class="trusted-logos">
+          <div class="partner-logo">
+            <span class="partner-text" style="font-weight:700;letter-spacing:0.04em;font-size:1.1rem;">AWS</span>
+          </div>
+          <div class="partner-logo">
+            <span class="partner-text" style="font-weight:600;letter-spacing:0.02em;">Google Cloud</span>
+          </div>
+          <div class="partner-logo">
+            <span class="partner-text" style="font-weight:600;letter-spacing:0.02em;">Microsoft Azure</span>
+          </div>
+          <div class="partner-logo">
+            <span class="partner-text" style="font-weight:700;letter-spacing:0.04em;color:var(--accent);">NVIDIA</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="section cta-final" id="cta">
+      <div class="container cta-layout">
+        <div class="cta-left animate-on-scroll">
+          <canvas id="ctaCanvas" class="section-canvas"></canvas>
+          <div class="cta-left-text">
+            <h2>Elevate Your AI Infrastructure Today</h2>
+          </div>
+        </div>
+        <div class="cta-right animate-on-scroll">
+          <p>Discover the power of MetaFinOps and take your AI-native enterprise to new heights with our cutting-edge FinOps solutions.</p>
+          <a href="contact.html" class="btn-primary">Get Started</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;padding:4rem 2rem 2rem;">
+      <!-- Solutions -->
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Solutions</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);transition:color var(--transition);">Cloud Cost Optimization</a>
+          <a href="solutions/ai-gpu-finops.html" style="font-size:0.85rem;color:var(--text-muted);">AI/GPU FinOps</a>
+          <a href="solutions/token-cost-intelligence.html" style="font-size:0.85rem;color:var(--text-muted);">Token Cost Intelligence</a>
+          <a href="solutions/devops-finops.html" style="font-size:0.85rem;color:var(--text-muted);">DevOps FinOps</a>
+          <a href="solutions/greenops.html" style="font-size:0.85rem;color:var(--text-muted);">GreenOps</a>
+          <span style="height:0.5rem;"></span>
+          <a href="platform.html" style="font-size:0.85rem;color:var(--text-muted);font-weight:600;">Platform</a>
+          <a href="pricing.html" style="font-size:0.85rem;color:var(--text-muted);font-weight:600;">Pricing</a>
+        </div>
+      </div>
+      <!-- Features -->
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Features</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);">Anomaly Detection</a>
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);">Cost Recommendations</a>
+          <a href="solutions/ai-gpu-finops.html" style="font-size:0.85rem;color:var(--text-muted);">GPU Cost Attribution</a>
+          <a href="solutions/token-cost-intelligence.html" style="font-size:0.85rem;color:var(--text-muted);">Token Cost Modeling</a>
+          <a href="solutions/devops-finops.html" style="font-size:0.85rem;color:var(--text-muted);">Budget Guardrails</a>
+          <a href="solutions/devops-finops.html" style="font-size:0.85rem;color:var(--text-muted);">PR Cost Annotations</a>
+          <a href="solutions/greenops.html" style="font-size:0.85rem;color:var(--text-muted);">Carbon Tracking</a>
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);">Virtual Tagging</a>
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);">Unit Costs</a>
+        </div>
+      </div>
+      <!-- Resources -->
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Resources</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="blog.html" style="font-size:0.85rem;color:var(--text-muted);">Blog</a>
+          <a href="roadmap.html" style="font-size:0.85rem;color:var(--text-muted);">Product Roadmap</a>
+          <a href="use-cases.html" style="font-size:0.85rem;color:var(--text-muted);">Use Cases</a>
+          <a href="why-metafinops.html" style="font-size:0.85rem;color:var(--text-muted);">Why MetaFinOps</a>
+        </div>
+      </div>
+      <!-- Company -->
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Company</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="about.html" style="font-size:0.85rem;color:var(--text-muted);">About</a>
+          <a href="contact.html" style="font-size:0.85rem;color:var(--text-muted);">Contact</a>
+          <a href="privacy.html" style="font-size:0.85rem;color:var(--text-muted);">Privacy Policy</a>
+          <a href="terms.html" style="font-size:0.85rem;color:var(--text-muted);">Terms of Service</a>
+          <span style="height:0.5rem;"></span>
+          <a href="contact.html" class="btn-primary" style="width:fit-content;padding:0.6rem 1.4rem;font-size:0.85rem;">Get Started</a>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Bottom -->
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:1rem;">
+      <div style="display:flex;align-items:center;gap:0.8rem;">
+        <a href="index.html" class="brand" style="gap:0.5rem;">
+          <img class="brand-logo" src="images/logo-icon-transparent.png" alt="MetaFinOps" width="28" height="25" style="height:25px;width:auto;">
           <span class="brand-name" style="font-size:0.95rem;">MetaFinOps</span>
         </a>
         <span style="font-size:0.78rem;color:var(--text-muted);">&copy; 2026 MetaFinOps. All rights reserved.</span>

@@ -26,6 +26,241 @@
     <div class="container header-inner">
       <a href="index.html" class="brand">
         <img class="brand-logo" src="images/logo-icon-transparent.png" alt="MetaFinOps" width="36" height="33" style="height:33px;width:auto;">
+        <span class="brand-name">MetaFinOps</span>
+      </a>
+      <nav class="nav" id="mainNav">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false">Solutions <span class="chevron">&#9662;</span></button>
+          <div class="nav-dropdown-menu">
+            <a href="solutions/cloud-cost-optimization.html">Cloud Cost Optimization</a>
+            <a href="solutions/ai-gpu-finops.html">AI/GPU FinOps</a>
+            <a href="solutions/token-cost-intelligence.html">Token Cost Intelligence</a>
+            <a href="solutions/devops-finops.html">DevOps FinOps</a>
+            <a href="solutions/greenops.html">GreenOps</a>
+            <div class="dropdown-divider"></div>
+            <a href="use-cases.html">Use Cases</a>
+            <a href="why-metafinops.html">Why MetaFinOps</a>
+          </div>
+        </div>
+        <a href="platform.html">Platform</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="#" class="nav-login">
+          <span class="login-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg></span>
+          Log In
+        </a>
+        <a href="contact.html" class="btn-outline-header">Get Started</a>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="roadmap-hero">
+    <div class="container">
+      <h1>Product Roadmap</h1>
+      <p>Our 6-month MVP journey &mdash; from foundation to enterprise-ready AI-native FinOps platform.</p>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section style="padding:2rem 0 4rem;">
+    <div class="container">
+      <div class="timeline">
+
+        <!-- Month 1-2: Foundation -->
+        <div class="timeline-item completed">
+          <div class="timeline-dot"></div>
+          <span class="status-badge completed">Completed</span>
+          <div class="milestone-card">
+            <h3>Months 1&ndash;2: Foundation &amp; Core Ingestion</h3>
+            <ul>
+              <li>Multi-cloud cost data ingestion (AWS, GCP, Azure)</li>
+              <li>Unified cost normalization and tagging engine</li>
+              <li>Basic dashboard with spend-by-service views</li>
+              <li>GPU instance identification and tracking</li>
+              <li>Authentication, RBAC, and tenant isolation</li>
+              <li>CI/CD pipeline and infrastructure scaffolding</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Month 3-4: Intelligence Layer -->
+        <div class="timeline-item in-progress">
+          <div class="timeline-dot"></div>
+          <span class="status-badge in-progress">In Progress</span>
+          <div class="milestone-card">
+            <h3>Months 3&ndash;4: Intelligence &amp; Guardrails</h3>
+            <ul>
+              <li>GPU utilization monitoring with idle detection alerts</li>
+              <li>Token cost modeling for OpenAI, Anthropic, Vertex AI</li>
+              <li>PR cost annotation bot (GitHub &amp; GitLab)</li>
+              <li>Terraform cost preview integration</li>
+              <li>Budget policy engine with threshold blocking</li>
+              <li>Anomaly detection with Slack/PagerDuty notifications</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Month 5-6: GreenOps & Enterprise -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <span class="status-badge planned">Planned</span>
+          <div class="milestone-card">
+            <h3>Months 5&ndash;6: GreenOps &amp; Enterprise</h3>
+            <ul>
+              <li>Carbon footprint tracking per service, region, and GPU-hour</li>
+              <li>Green region recommendations for batch workloads</li>
+              <li>ESG compliance report exports (PDF &amp; CSV)</li>
+              <li>Model-level cost attribution dashboards</li>
+              <li>Team-level budget management and approval workflows</li>
+              <li>SSO integration and enterprise admin controls</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Q3 2025: Scale -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <span class="status-badge planned">Planned</span>
+          <div class="milestone-card">
+            <h3>Q3 2025: Scale &amp; Optimize</h3>
+            <ul>
+              <li>RI/SP discount optimization recommendations</li>
+              <li>Multi-model cost comparison engine</li>
+              <li>Custom policy builder (no-code rule creation)</li>
+              <li>Kubernetes cost allocation (namespace &amp; pod level)</li>
+              <li>Advanced forecasting with ML-based spend prediction</li>
+              <li>Public API and webhook integrations</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Q4 2025: Ecosystem -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <span class="status-badge planned">Planned</span>
+          <div class="milestone-card">
+            <h3>Q4 2025: Ecosystem &amp; Marketplace</h3>
+            <ul>
+              <li>Integration marketplace (Datadog, Grafana, ServiceNow)</li>
+              <li>Custom dashboard builder with drag-and-drop widgets</li>
+              <li>FinOps-as-Code SDK for infrastructure-as-code workflows</li>
+              <li>Multi-tenant reseller portal for MSPs</li>
+              <li>SOC 2 Type II certification</li>
+              <li>AI-powered optimization copilot</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT PILLARS -->
+  <section class="gap-section">
+    <div class="container">
+      <h2 style="text-align:center;margin-bottom:0.8rem;">Three Pillars of the Platform</h2>
+      <p style="text-align:center;color:var(--text-muted);margin-bottom:2.5rem;max-width:520px;margin-left:auto;margin-right:auto;">Every milestone on our roadmap maps to one of three strategic pillars.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border);">
+        <div style="padding:2rem 1.8rem;border-right:1px solid var(--border);">
+          <div style="width:44px;height:44px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/></svg>
+          </div>
+          <h3 style="font-size:1rem;font-weight:600;color:var(--heading);margin-bottom:0.5rem;">AI/GPU FinOps</h3>
+          <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.65;">GPU utilization tracking, token cost modeling, idle detection, model-level attribution, and right-sizing recommendations.</p>
+        </div>
+        <div style="padding:2rem 1.8rem;border-right:1px solid var(--border);">
+          <div style="width:44px;height:44px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="12" y1="2" x2="12" y2="22"/></svg>
+          </div>
+          <h3 style="font-size:1rem;font-weight:600;color:var(--heading);margin-bottom:0.5rem;">DevOps FinOps</h3>
+          <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.65;">PR cost annotations, CI/CD budget guardrails, Terraform preview, policy-as-code enforcement, and anomaly detection.</p>
+        </div>
+        <div style="padding:2rem 1.8rem;">
+          <div style="width:44px;height:44px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/><path d="M8 18l-2 2M16 18l2 2"/></svg>
+          </div>
+          <h3 style="font-size:1rem;font-weight:600;color:var(--heading);margin-bottom:0.5rem;">GreenOps</h3>
+          <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.65;">Carbon per GPU-hour, green region scheduling, ESG compliance exports, and sustainability-aware optimization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:4rem 0;text-align:center;border-top:1px solid var(--border);">
+    <div class="container">
+      <h2 style="font-size:1.6rem;font-weight:600;color:var(--heading);margin-bottom:1rem;">Want to Shape What We Build?</h2>
+      <p style="color:var(--text-muted);margin-bottom:2rem;font-size:0.95rem;max-width:500px;margin-left:auto;margin-right:auto;">Join our early access program and help prioritize the features that matter most to your team.</p>
+      <a href="contact.html" class="btn-primary">Join Early Access &rarr;</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;padding:4rem 2rem 2rem;">
+      <!-- Solutions -->
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Solutions</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);transition:color var(--transition);">Cloud Cost Optimization</a>
+          <a href="solutions/ai-gpu-finops.html" style="font-size:0.85rem;color:var(--text-muted);">AI/GPU FinOps</a>
+          <a href="solutions/token-cost-intelligence.html" style="font-size:0.85rem;color:var(--text-muted);">Token Cost Intelligence</a>
+          <a href="solutions/devops-finops.html" style="font-size:0.85rem;color:var(--text-muted);">DevOps FinOps</a>
+          <a href="solutions/greenops.html" style="font-size:0.85rem;color:var(--text-muted);">GreenOps</a>
+          <span style="height:0.5rem;"></span>
+          <a href="platform.html" style="font-size:0.85rem;color:var(--text-muted);font-weight:600;">Platform</a>
+          <a href="pricing.html" style="font-size:0.85rem;color:var(--text-muted);font-weight:600;">Pricing</a>
+        </div>
+      </div>
+      <!-- Features -->
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Features</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);">Anomaly Detection</a>
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);">Cost Recommendations</a>
+          <a href="solutions/ai-gpu-finops.html" style="font-size:0.85rem;color:var(--text-muted);">GPU Cost Attribution</a>
+          <a href="solutions/token-cost-intelligence.html" style="font-size:0.85rem;color:var(--text-muted);">Token Cost Modeling</a>
+          <a href="solutions/devops-finops.html" style="font-size:0.85rem;color:var(--text-muted);">Budget Guardrails</a>
+          <a href="solutions/devops-finops.html" style="font-size:0.85rem;color:var(--text-muted);">PR Cost Annotations</a>
+          <a href="solutions/greenops.html" style="font-size:0.85rem;color:var(--text-muted);">Carbon Tracking</a>
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);">Virtual Tagging</a>
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);">Unit Costs</a>
+        </div>
+      </div>
+      <!-- Resources -->
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Resources</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="blog.html" style="font-size:0.85rem;color:var(--text-muted);">Blog</a>
+          <a href="roadmap.html" style="font-size:0.85rem;color:var(--text-muted);">Product Roadmap</a>
+          <a href="use-cases.html" style="font-size:0.85rem;color:var(--text-muted);">Use Cases</a>
+          <a href="why-metafinops.html" style="font-size:0.85rem;color:var(--text-muted);">Why MetaFinOps</a>
+        </div>
+      </div>
+      <!-- Company -->
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Company</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="about.html" style="font-size:0.85rem;color:var(--text-muted);">About</a>
+          <a href="contact.html" style="font-size:0.85rem;color:var(--text-muted);">Contact</a>
+          <a href="privacy.html" style="font-size:0.85rem;color:var(--text-muted);">Privacy Policy</a>
+          <a href="terms.html" style="font-size:0.85rem;color:var(--text-muted);">Terms of Service</a>
+          <span style="height:0.5rem;"></span>
+          <a href="contact.html" class="btn-primary" style="width:fit-content;padding:0.6rem 1.4rem;font-size:0.85rem;">Get Started</a>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Bottom -->
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:1rem;">
+      <div style="display:flex;align-items:center;gap:0.8rem;">
+        <a href="index.html" class="brand" style="gap:0.5rem;">
+          <img class="brand-logo" src="images/logo-icon-transparent.png" alt="MetaFinOps" width="28" height="25" style="height:25px;width:auto;">
           <span class="brand-name" style="font-size:0.95rem;">MetaFinOps</span>
         </a>
         <span style="font-size:0.78rem;color:var(--text-muted);">&copy; 2026 MetaFinOps. All rights reserved.</span>

@@ -26,6 +26,308 @@
     <div class="container header-inner">
       <a href="index.html" class="brand">
         <img class="brand-logo" src="images/logo-icon-transparent.png" alt="MetaFinOps" width="36" height="33" style="height:33px;width:auto;">
+        <span class="brand-name">MetaFinOps</span>
+      </a>
+      <nav class="nav" id="mainNav">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false">Solutions <span class="chevron">&#9662;</span></button>
+          <div class="nav-dropdown-menu">
+            <a href="solutions/cloud-cost-optimization.html">Cloud Cost Optimization</a>
+            <a href="solutions/ai-gpu-finops.html">AI/GPU FinOps</a>
+            <a href="solutions/token-cost-intelligence.html">Token Cost Intelligence</a>
+            <a href="solutions/devops-finops.html">DevOps FinOps</a>
+            <a href="solutions/greenops.html">GreenOps</a>
+            <div class="dropdown-divider"></div>
+            <a href="use-cases.html">Use Cases</a>
+            <a href="why-metafinops.html">Why MetaFinOps</a>
+          </div>
+        </div>
+        <a href="platform.html">Platform</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="#" class="nav-login">
+          <span class="login-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg></span>
+          Log In
+        </a>
+        <a href="contact.html" class="btn-outline-header">Get Started</a>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="about-hero">
+    <div class="container">
+      <h1>Why MetaFinOps?</h1>
+      <p>The only platform that unifies AI/GPU cost intelligence, DevOps-first guardrails, and carbon-aware analytics. Here's how we compare.</p>
+    </div>
+  </section>
+
+  <!-- POSITIONING -->
+  <section class="gap-section">
+    <div class="container">
+      <h2>AI-Native FinOps + GPUOps + GreenOps &mdash; Unified</h2>
+      <p>Legacy FinOps tools were built for virtual machines and reserved instances. MetaFinOps was purpose-built for the AI era &mdash; where GPU utilization, token-level cost modeling, and carbon-aware scheduling are table stakes, not afterthoughts.</p>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section style="padding:4rem 0;">
+    <div class="container">
+      <h2 style="font-size:1.5rem;font-weight:600;color:var(--heading);margin-bottom:0.8rem;text-align:center;">Competitive Comparison</h2>
+      <p style="color:var(--text-muted);text-align:center;margin-bottom:2rem;font-size:0.95rem;">Feature-by-feature breakdown across the FinOps landscape.</p>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Capability</th>
+            <th class="highlight-col">MetaFinOps</th>
+            <th>Vantage</th>
+            <th>CloudZero</th>
+            <th>CloudKeeper</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Multi-cloud cost visibility</td>
+            <td class="highlight-col"><span class="check">&#10003;</span></td>
+            <td><span class="check">&#10003;</span></td>
+            <td><span class="check">&#10003;</span></td>
+            <td><span class="partial">~</span></td>
+          </tr>
+          <tr>
+            <td>GPU utilization tracking</td>
+            <td class="highlight-col"><span class="check">&#10003;</span></td>
+            <td><span class="cross">&#10005;</span></td>
+            <td><span class="cross">&#10005;</span></td>
+            <td><span class="cross">&#10005;</span></td>
+          </tr>
+          <tr>
+            <td>Token-level cost modeling</td>
+            <td class="highlight-col"><span class="check">&#10003;</span></td>
+            <td><span class="cross">&#10005;</span></td>
+            <td><span class="cross">&#10005;</span></td>
+            <td><span class="cross">&#10005;</span></td>
+          </tr>
+          <tr>
+            <td>Idle GPU detection &amp; alerts</td>
+            <td class="highlight-col"><span class="check">&#10003;</span></td>
+            <td><span class="cross">&#10005;</span></td>
+            <td><span class="cross">&#10005;</span></td>
+            <td><span class="cross">&#10005;</span></td>
+          </tr>
+          <tr>
+            <td>PR cost annotations</td>
+            <td class="highlight-col"><span class="check">&#10003;</span></td>
+            <td><span class="cross">&#10005;</span></td>
+            <td><span class="cross">&#10005;</span></td>
+            <td><span class="cross">&#10005;</span></td>
+          </tr>
+          <tr>
+            <td>CI/CD budget guardrails</td>
+            <td class="highlight-col"><span class="check">&#10003;</span></td>
+            <td><span class="cross">&#10005;</span></td>
+            <td><span class="partial">~</span></td>
+            <td><span class="cross">&#10005;</span></td>
+          </tr>
+          <tr>
+            <td>Terraform cost preview</td>
+            <td class="highlight-col"><span class="check">&#10003;</span></td>
+            <td><span class="partial">~</span></td>
+            <td><span class="cross">&#10005;</span></td>
+            <td><span class="cross">&#10005;</span></td>
+          </tr>
+          <tr>
+            <td>Carbon / CO&#8322;e tracking</td>
+            <td class="highlight-col"><span class="check">&#10003;</span></td>
+            <td><span class="cross">&#10005;</span></td>
+            <td><span class="cross">&#10005;</span></td>
+            <td><span class="cross">&#10005;</span></td>
+          </tr>
+          <tr>
+            <td>Green region recommendations</td>
+            <td class="highlight-col"><span class="check">&#10003;</span></td>
+            <td><span class="cross">&#10005;</span></td>
+            <td><span class="cross">&#10005;</span></td>
+            <td><span class="cross">&#10005;</span></td>
+          </tr>
+          <tr>
+            <td>ESG compliance exports</td>
+            <td class="highlight-col"><span class="check">&#10003;</span></td>
+            <td><span class="cross">&#10005;</span></td>
+            <td><span class="cross">&#10005;</span></td>
+            <td><span class="cross">&#10005;</span></td>
+          </tr>
+          <tr>
+            <td>Model-level cost attribution</td>
+            <td class="highlight-col"><span class="check">&#10003;</span></td>
+            <td><span class="cross">&#10005;</span></td>
+            <td><span class="partial">~</span></td>
+            <td><span class="cross">&#10005;</span></td>
+          </tr>
+          <tr>
+            <td>RI/SP discount management</td>
+            <td class="highlight-col"><span class="check">&#10003;</span></td>
+            <td><span class="check">&#10003;</span></td>
+            <td><span class="check">&#10003;</span></td>
+            <td><span class="check">&#10003;</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="color:var(--text-muted);font-size:0.8rem;text-align:center;"><span class="check" style="color:var(--accent);">&#10003;</span> Full support &nbsp;&middot;&nbsp; <span class="partial" style="color:#fbbf24;">~</span> Partial &nbsp;&middot;&nbsp; <span class="cross" style="color:var(--text-muted);opacity:0.4;">&#10005;</span> Not available</p>
+    </div>
+  </section>
+
+  <!-- WHAT THEY DO vs WHAT WE DO -->
+  <section class="gap-section">
+    <div class="container">
+      <h2>What They Do vs. What We Do</h2>
+      <p style="margin-bottom:2rem;">Traditional FinOps platforms focus on cost dashboards and discount optimization. MetaFinOps goes deeper &mdash; embedding cost intelligence into engineering workflows, GPU infrastructure, and sustainability reporting.</p>
+      <div class="differentiator-grid">
+        <div class="differentiator-card">
+          <h3>They: Retroactive cost reports</h3>
+          <p>Competitors surface cost data days or weeks after consumption. Teams find out about overruns only when the invoice arrives.</p>
+        </div>
+        <div class="differentiator-card">
+          <h3>We: Proactive cost guardrails</h3>
+          <p>MetaFinOps blocks overspend at the PR level. Before code merges, engineers see cost impact and budget policies enforce limits automatically.</p>
+        </div>
+        <div class="differentiator-card">
+          <h3>They: VM-era cost allocation</h3>
+          <p>Legacy tools model cost around virtual machines, storage, and network. They have no concept of GPU utilization or token throughput.</p>
+        </div>
+        <div class="differentiator-card">
+          <h3>We: AI-native cost modeling</h3>
+          <p>We model cost per GPU-hour, per token, per inference call, and per training job &mdash; the units that matter to AI and ML teams.</p>
+        </div>
+        <div class="differentiator-card">
+          <h3>They: Cost only</h3>
+          <p>FinOps platforms optimize for dollars. They ignore the environmental impact of cloud infrastructure choices entirely.</p>
+        </div>
+        <div class="differentiator-card">
+          <h3>We: Cost + Carbon unified</h3>
+          <p>Every cost recommendation includes a carbon impact score. Green region scheduling and ESG-ready exports are built into the platform.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 CAPABILITY GAPS -->
+  <section style="padding:4rem 0;">
+    <div class="container">
+      <h2 style="font-size:1.5rem;font-weight:600;color:var(--heading);margin-bottom:0.8rem;text-align:center;">7 Gaps Nobody Else Fills</h2>
+      <p style="color:var(--text-muted);text-align:center;margin-bottom:2.5rem;font-size:0.95rem;">Capabilities unique to MetaFinOps that you won't find in any other FinOps platform.</p>
+
+      <div class="differentiator-grid">
+        <div class="differentiator-card">
+          <h3>1. Token Cost Intelligence</h3>
+          <p>Map every API call, inference request, and training epoch to its true token-level cost across OpenAI, Anthropic, Vertex AI, and self-hosted models.</p>
+        </div>
+        <div class="differentiator-card">
+          <h3>2. GPU Idle Detection</h3>
+          <p>Real-time monitoring of GPU utilization with automated alerts when expensive A100 or H100 instances sit idle beyond threshold.</p>
+        </div>
+        <div class="differentiator-card">
+          <h3>3. PR Cost Annotations</h3>
+          <p>Automatic cost impact comments on pull requests. Engineers see "This merge adds $420/month" before code ships.</p>
+        </div>
+        <div class="differentiator-card">
+          <h3>4. Carbon per GPU-Hour</h3>
+          <p>Track CO&#8322;e emissions per GPU instance, per region, per training job. Integrated with grid carbon intensity data.</p>
+        </div>
+        <div class="differentiator-card">
+          <h3>5. CI/CD Budget Policies</h3>
+          <p>Define budget guardrails that automatically block deployments exceeding thresholds. Policy-as-code for cloud spend.</p>
+        </div>
+        <div class="differentiator-card">
+          <h3>6. Model-Level Attribution</h3>
+          <p>Attribute infrastructure costs to specific ML models, experiments, and customers &mdash; not just cloud accounts or projects.</p>
+        </div>
+        <div class="differentiator-card">
+          <h3>7. Green Region Scheduling</h3>
+          <p>Recommend lower-carbon regions for batch jobs and training workloads. Carbon-aware scheduling that saves money too.</p>
+        </div>
+        <div class="differentiator-card" style="display:flex;align-items:center;justify-content:center;">
+          <a href="contact.html" class="btn-primary">See It In Action &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="page-cta" style="border-top:1px solid var(--border);padding:4rem 0;text-align:center;">
+    <div class="container">
+      <h2 style="font-size:1.6rem;font-weight:600;color:var(--heading);margin-bottom:1rem;">Ready to See the Difference?</h2>
+      <p style="color:var(--text-muted);margin-bottom:2rem;font-size:0.95rem;max-width:500px;margin-left:auto;margin-right:auto;">Schedule a demo and see why MetaFinOps is the only platform built for the AI infrastructure era.</p>
+      <a href="contact.html" class="btn-primary">Get Started &rarr;</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;padding:4rem 2rem 2rem;">
+      <!-- Solutions -->
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Solutions</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);transition:color var(--transition);">Cloud Cost Optimization</a>
+          <a href="solutions/ai-gpu-finops.html" style="font-size:0.85rem;color:var(--text-muted);">AI/GPU FinOps</a>
+          <a href="solutions/token-cost-intelligence.html" style="font-size:0.85rem;color:var(--text-muted);">Token Cost Intelligence</a>
+          <a href="solutions/devops-finops.html" style="font-size:0.85rem;color:var(--text-muted);">DevOps FinOps</a>
+          <a href="solutions/greenops.html" style="font-size:0.85rem;color:var(--text-muted);">GreenOps</a>
+          <span style="height:0.5rem;"></span>
+          <a href="platform.html" style="font-size:0.85rem;color:var(--text-muted);font-weight:600;">Platform</a>
+          <a href="pricing.html" style="font-size:0.85rem;color:var(--text-muted);font-weight:600;">Pricing</a>
+        </div>
+      </div>
+      <!-- Features -->
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Features</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);">Anomaly Detection</a>
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);">Cost Recommendations</a>
+          <a href="solutions/ai-gpu-finops.html" style="font-size:0.85rem;color:var(--text-muted);">GPU Cost Attribution</a>
+          <a href="solutions/token-cost-intelligence.html" style="font-size:0.85rem;color:var(--text-muted);">Token Cost Modeling</a>
+          <a href="solutions/devops-finops.html" style="font-size:0.85rem;color:var(--text-muted);">Budget Guardrails</a>
+          <a href="solutions/devops-finops.html" style="font-size:0.85rem;color:var(--text-muted);">PR Cost Annotations</a>
+          <a href="solutions/greenops.html" style="font-size:0.85rem;color:var(--text-muted);">Carbon Tracking</a>
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);">Virtual Tagging</a>
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);">Unit Costs</a>
+        </div>
+      </div>
+      <!-- Resources -->
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Resources</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="blog.html" style="font-size:0.85rem;color:var(--text-muted);">Blog</a>
+          <a href="roadmap.html" style="font-size:0.85rem;color:var(--text-muted);">Product Roadmap</a>
+          <a href="use-cases.html" style="font-size:0.85rem;color:var(--text-muted);">Use Cases</a>
+          <a href="why-metafinops.html" style="font-size:0.85rem;color:var(--text-muted);">Why MetaFinOps</a>
+        </div>
+      </div>
+      <!-- Company -->
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Company</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="about.html" style="font-size:0.85rem;color:var(--text-muted);">About</a>
+          <a href="contact.html" style="font-size:0.85rem;color:var(--text-muted);">Contact</a>
+          <a href="privacy.html" style="font-size:0.85rem;color:var(--text-muted);">Privacy Policy</a>
+          <a href="terms.html" style="font-size:0.85rem;color:var(--text-muted);">Terms of Service</a>
+          <span style="height:0.5rem;"></span>
+          <a href="contact.html" class="btn-primary" style="width:fit-content;padding:0.6rem 1.4rem;font-size:0.85rem;">Get Started</a>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Bottom -->
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:1rem;">
+      <div style="display:flex;align-items:center;gap:0.8rem;">
+        <a href="index.html" class="brand" style="gap:0.5rem;">
+          <img class="brand-logo" src="images/logo-icon-transparent.png" alt="MetaFinOps" width="28" height="25" style="height:25px;width:auto;">
           <span class="brand-name" style="font-size:0.95rem;">MetaFinOps</span>
         </a>
         <span style="font-size:0.78rem;color:var(--text-muted);">&copy; 2026 MetaFinOps. All rights reserved.</span>

@@ -26,6 +26,223 @@
     <div class="container header-inner">
       <a href="index.html" class="brand">
         <img class="brand-logo" src="images/logo-icon-transparent.png" alt="MetaFinOps" width="36" height="33" style="height:33px;width:auto;">
+        <span class="brand-name">MetaFinOps</span>
+      </a>
+      <nav class="nav" id="mainNav">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false">Solutions <span class="chevron">&#9662;</span></button>
+          <div class="nav-dropdown-menu">
+            <a href="solutions/cloud-cost-optimization.html">Cloud Cost Optimization</a>
+            <a href="solutions/ai-gpu-finops.html">AI/GPU FinOps</a>
+            <a href="solutions/token-cost-intelligence.html">Token Cost Intelligence</a>
+            <a href="solutions/devops-finops.html">DevOps FinOps</a>
+            <a href="solutions/greenops.html">GreenOps</a>
+            <div class="dropdown-divider"></div>
+            <a href="use-cases.html">Use Cases</a>
+            <a href="why-metafinops.html">Why MetaFinOps</a>
+          </div>
+        </div>
+        <a href="platform.html">Platform</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="#" class="nav-login">
+          <span class="login-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg></span>
+          Log In
+        </a>
+        <a href="contact.html" class="btn-outline-header">Get Started</a>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="about-hero">
+    <div class="container">
+      <h1>Use Cases</h1>
+      <p>Whether you're a lean AI startup, a multi-team enterprise, or a regulated FinTech &mdash; MetaFinOps adapts to your cost optimization needs.</p>
+    </div>
+  </section>
+
+  <!-- USE CASE CARDS -->
+  <section style="padding:4rem 0;">
+    <div class="container">
+      <div class="use-case-grid">
+
+        <!-- AI Startups -->
+        <div class="use-case-card">
+          <div class="persona-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3>AI Startups</h3>
+          <p class="persona-desc">Series A&ndash;C companies with growing GPU spend</p>
+          <p>You're burning through GPU credits faster than your runway allows. Every idle A100 hour is money that could fund another sprint. You need visibility into which models and experiments drive cost &mdash; without building internal tooling.</p>
+          <h4>Key Pain Points</h4>
+          <ul>
+            <li>GPU instances left running after training jobs complete</li>
+            <li>No visibility into cost per model or experiment</li>
+            <li>Token costs spiraling across multiple LLM providers</li>
+            <li>Engineering team has no incentive to optimize</li>
+          </ul>
+          <h4 style="margin-top:1.2rem;">MetaFinOps Features</h4>
+          <ul>
+            <li>GPU idle detection with Slack/PagerDuty alerts</li>
+            <li>Per-model cost attribution dashboards</li>
+            <li>Token cost modeling across OpenAI, Anthropic, Vertex</li>
+            <li>Right-sizing recommendations for GPU instances</li>
+          </ul>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="use-case-card">
+          <div class="persona-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><path d="M12 12v3"/></svg>
+          </div>
+          <h3>Enterprise</h3>
+          <p class="persona-desc">50+ teams, multi-cloud, governance-first</p>
+          <p>Your cloud bill exceeds seven figures monthly. You have dozens of teams, each with different budgets and usage patterns. You need policy-driven guardrails that scale without manual reviews, plus audit trails that satisfy finance and compliance.</p>
+          <h4>Key Pain Points</h4>
+          <ul>
+            <li>Cost allocation across 50+ teams is manual</li>
+            <li>No automated budget enforcement at deployment time</li>
+            <li>Finance demands monthly cost-to-BU reports</li>
+            <li>ESG reporting requirements growing annually</li>
+          </ul>
+          <h4 style="margin-top:1.2rem;">MetaFinOps Features</h4>
+          <ul>
+            <li>Team-level budget policies with auto-enforcement</li>
+            <li>PR cost annotations for every engineering team</li>
+            <li>Cost-to-business-unit mapping and exports</li>
+            <li>Carbon reporting with ESG-ready compliance exports</li>
+          </ul>
+        </div>
+
+        <!-- FinTech / BFSI -->
+        <div class="use-case-card">
+          <div class="persona-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>FinTech / BFSI</h3>
+          <p class="persona-desc">Regulated industries with compliance requirements</p>
+          <p>Compliance and auditing are non-negotiable. Your regulators expect detailed cost allocation reports. Every infrastructure decision needs documentation, and your AI workloads must be traceable from deployment to cost center.</p>
+          <h4>Key Pain Points</h4>
+          <ul>
+            <li>Regulatory audits require detailed cost lineage</li>
+            <li>AI model costs must map to specific business lines</li>
+            <li>Strict budget controls needed for compliance</li>
+            <li>Carbon footprint reporting mandated by ESG rules</li>
+          </ul>
+          <h4 style="margin-top:1.2rem;">MetaFinOps Features</h4>
+          <ul>
+            <li>Audit-ready cost lineage and tagging</li>
+            <li>Business-line cost mapping with approval workflows</li>
+            <li>Policy-as-code budget enforcement</li>
+            <li>SOC 2 and ESG compliance report exports</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT METRICS -->
+  <section class="gap-section">
+    <div class="container" style="text-align:center;">
+      <h2 style="text-align:center;">Impact Across Industries</h2>
+      <p style="max-width:540px;margin:0 auto 2.5rem;text-align:center;">Organizations using MetaFinOps see measurable results within the first 30 days.</p>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border);max-width:700px;margin:0 auto;">
+        <div style="padding:2rem 1rem;border-right:1px solid var(--border);text-align:center;">
+          <div style="font-size:2rem;font-weight:700;color:var(--accent);">35%</div>
+          <div style="font-size:0.82rem;color:var(--text-muted);">GPU cost reduction</div>
+        </div>
+        <div style="padding:2rem 1rem;border-right:1px solid var(--border);text-align:center;">
+          <div style="font-size:2rem;font-weight:700;color:var(--accent);">60%</div>
+          <div style="font-size:0.82rem;color:var(--text-muted);">Faster cost reviews</div>
+        </div>
+        <div style="padding:2rem 1rem;border-right:1px solid var(--border);text-align:center;">
+          <div style="font-size:2rem;font-weight:700;color:var(--accent);">100%</div>
+          <div style="font-size:0.82rem;color:var(--text-muted);">Cost attribution</div>
+        </div>
+        <div style="padding:2rem 1rem;text-align:center;">
+          <div style="font-size:2rem;font-weight:700;color:var(--accent);">ESG</div>
+          <div style="font-size:0.82rem;color:var(--text-muted);">Compliance ready</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:4rem 0;text-align:center;border-top:1px solid var(--border);">
+    <div class="container">
+      <h2 style="font-size:1.6rem;font-weight:600;color:var(--heading);margin-bottom:1rem;">Which Use Case Fits You?</h2>
+      <p style="color:var(--text-muted);margin-bottom:2rem;font-size:0.95rem;max-width:500px;margin-left:auto;margin-right:auto;">Let us show you a personalized demo based on your team's size, cloud stack, and GPU workload.</p>
+      <a href="contact.html" class="btn-primary">Schedule a Demo &rarr;</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;padding:4rem 2rem 2rem;">
+      <!-- Solutions -->
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Solutions</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);transition:color var(--transition);">Cloud Cost Optimization</a>
+          <a href="solutions/ai-gpu-finops.html" style="font-size:0.85rem;color:var(--text-muted);">AI/GPU FinOps</a>
+          <a href="solutions/token-cost-intelligence.html" style="font-size:0.85rem;color:var(--text-muted);">Token Cost Intelligence</a>
+          <a href="solutions/devops-finops.html" style="font-size:0.85rem;color:var(--text-muted);">DevOps FinOps</a>
+          <a href="solutions/greenops.html" style="font-size:0.85rem;color:var(--text-muted);">GreenOps</a>
+          <span style="height:0.5rem;"></span>
+          <a href="platform.html" style="font-size:0.85rem;color:var(--text-muted);font-weight:600;">Platform</a>
+          <a href="pricing.html" style="font-size:0.85rem;color:var(--text-muted);font-weight:600;">Pricing</a>
+        </div>
+      </div>
+      <!-- Features -->
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Features</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);">Anomaly Detection</a>
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);">Cost Recommendations</a>
+          <a href="solutions/ai-gpu-finops.html" style="font-size:0.85rem;color:var(--text-muted);">GPU Cost Attribution</a>
+          <a href="solutions/token-cost-intelligence.html" style="font-size:0.85rem;color:var(--text-muted);">Token Cost Modeling</a>
+          <a href="solutions/devops-finops.html" style="font-size:0.85rem;color:var(--text-muted);">Budget Guardrails</a>
+          <a href="solutions/devops-finops.html" style="font-size:0.85rem;color:var(--text-muted);">PR Cost Annotations</a>
+          <a href="solutions/greenops.html" style="font-size:0.85rem;color:var(--text-muted);">Carbon Tracking</a>
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);">Virtual Tagging</a>
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);">Unit Costs</a>
+        </div>
+      </div>
+      <!-- Resources -->
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Resources</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="blog.html" style="font-size:0.85rem;color:var(--text-muted);">Blog</a>
+          <a href="roadmap.html" style="font-size:0.85rem;color:var(--text-muted);">Product Roadmap</a>
+          <a href="use-cases.html" style="font-size:0.85rem;color:var(--text-muted);">Use Cases</a>
+          <a href="why-metafinops.html" style="font-size:0.85rem;color:var(--text-muted);">Why MetaFinOps</a>
+        </div>
+      </div>
+      <!-- Company -->
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Company</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="about.html" style="font-size:0.85rem;color:var(--text-muted);">About</a>
+          <a href="contact.html" style="font-size:0.85rem;color:var(--text-muted);">Contact</a>
+          <a href="privacy.html" style="font-size:0.85rem;color:var(--text-muted);">Privacy Policy</a>
+          <a href="terms.html" style="font-size:0.85rem;color:var(--text-muted);">Terms of Service</a>
+          <span style="height:0.5rem;"></span>
+          <a href="contact.html" class="btn-primary" style="width:fit-content;padding:0.6rem 1.4rem;font-size:0.85rem;">Get Started</a>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Bottom -->
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:1rem;">
+      <div style="display:flex;align-items:center;gap:0.8rem;">
+        <a href="index.html" class="brand" style="gap:0.5rem;">
+          <img class="brand-logo" src="images/logo-icon-transparent.png" alt="MetaFinOps" width="28" height="25" style="height:25px;width:auto;">
           <span class="brand-name" style="font-size:0.95rem;">MetaFinOps</span>
         </a>
         <span style="font-size:0.78rem;color:var(--text-muted);">&copy; 2026 MetaFinOps. All rights reserved.</span>
