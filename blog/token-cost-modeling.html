@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Token Cost Modeling: Beyond Simple API Call Tracking – MetaFinOps</title>
+  <meta name="description" content="Track token costs at the granular level across OpenAI, Anthropic, Google, and more. Learn how to build accurate token cost models for AI applications." />
+  <meta property="og:title" content="Token Cost Modeling: Beyond Simple API Call Tracking" />
+  <meta property="og:description" content="Accurate token-level cost modeling for LLMs and embedding APIs" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://metafinops.com/blog/token-cost-modeling.html" />
+  <meta property="article:published_time" content="2026-02-14" />
+  <meta property="article:author" content="MetaFinOps" />
+  <meta property="article:section" content="AI/GPU FinOps" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Token Cost Modeling" />
+  <meta name="twitter:description" content="Accurate token-level cost modeling for LLMs and embedding APIs" />
+  <link rel="canonical" href="https://metafinops.com/blog/token-cost-modeling.html" />
+  <link rel="stylesheet" href="../css/styles.css?v=5" />
+  <link rel="stylesheet" href="../css/pages.css?v=5" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <span></span>
+      <span>AI-native FinOps Solutions by <a href="../index.html">MetaFinOps</a></span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand">
+        <img class="brand-logo" src="../images/logo-icon-transparent.png" alt="MetaFinOps" width="36" height="33" style="height:33px;width:auto;">
+        <span class="brand-name">MetaFinOps</span>
+      </a>
+      <nav class="nav" id="mainNav">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false">Solutions <span class="chevron">&#9662;</span></button>
+          <div class="nav-dropdown-menu">
+            <a href="../solutions/cloud-cost-optimization.html">Cloud Cost Optimization</a>
+            <a href="../solutions/ai-gpu-finops.html">AI/GPU FinOps</a>
+            <a href="../solutions/token-cost-intelligence.html">Token Cost Intelligence</a>
+            <a href="../solutions/devops-finops.html">DevOps FinOps</a>
+            <a href="../solutions/greenops.html">GreenOps</a>
+            <div class="dropdown-divider"></div>
+            <a href="../use-cases.html">Use Cases</a>
+            <a href="../why-metafinops.html">Why MetaFinOps</a>
+          </div>
+        </div>
+        <a href="../platform.html">Platform</a>
+        <a href="../pricing.html">Pricing</a>
+        <a href="../about.html">About</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../roadmap.html">Roadmap</a>
+        <a href="#" class="nav-login">
+          <span class="login-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg></span>
+          Log In
+        </a>
+        <a href="../contact.html" class="btn-outline-header">Get Started</a>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ARTICLE HERO -->
+  <section style="padding:4rem 0;border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div style="max-width:800px;">
+        <span class="blog-tag" style="margin-bottom:1rem;">AI/GPU FinOps</span>
+        <h1 style="font-size:2.2rem;font-weight:700;color:var(--heading);margin-bottom:1rem;line-height:1.2;">Token Cost Modeling: Beyond Simple API Call Tracking</h1>
+        <p style="font-size:1.05rem;color:var(--text-muted);margin-bottom:1rem;line-height:1.6;">Tracking API costs at the call level misses the full picture. True token cost modeling maps prompt tokens, completion tokens, embedding calls, and fine-tuning epochs to business outcomes. Learn how to build an accurate LLM cost model.</p>
+        <div style="display:flex;gap:1.5rem;align-items:center;color:var(--text-muted);font-size:0.9rem;">
+          <span>February 14, 2026</span>
+          <span>•</span>
+          <span>5 min read</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE CONTENT -->
+  <section style="padding:4rem 0;">
+    <div class="container" style="max-width:800px;">
+
+      <h2>The Problem: API Counts Hide the Real Cost</h2>
+      <p>Most teams track LLM costs this way:</p>
+      <pre style="background:var(--card-bg);padding:1rem;border-radius:8px;overflow-x:auto;"><code>response = openai.ChatCompletion.create(
+  model="gpt-4",
+  messages=[...]
+)
+# Cost = 1 API call</code></pre>
+      <p>This is backwards. The actual cost depends on <strong>how many tokens your prompt and completion use</strong>, not how many times you call the API.</p>
+      <p>For example:</p>
+      <ul>
+        <li>A short summary request (prompt: 500 tokens, completion: 100 tokens) costs $0.003 with GPT-4</li>
+        <li>A long document analysis (prompt: 5,000 tokens, completion: 1,000 tokens) costs $0.030 with GPT-4</li>
+      </ul>
+      <p>That's a 10x difference for just 2 API calls. If you're only counting "API calls," you're flying blind.</p>
+
+      <h2>Token Pricing Across Providers</h2>
+      <p>Different providers price tokens differently, and the ratios matter:</p>
+
+      <table style="width:100%;border-collapse:collapse;margin:1.5rem 0;">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border);">
+            <th style="text-align:left;padding:0.8rem;color:var(--heading);">Model</th>
+            <th style="text-align:right;padding:0.8rem;color:var(--heading);">Prompt (per 1M tokens)</th>
+            <th style="text-align:right;padding:0.8rem;color:var(--heading);">Completion (per 1M tokens)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.8rem;color:var(--text);">GPT-3.5 Turbo</td>
+            <td style="text-align:right;padding:0.8rem;color:var(--text);">$0.50</td>
+            <td style="text-align:right;padding:0.8rem;color:var(--text);">$1.50</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.8rem;color:var(--text);">GPT-4</td>
+            <td style="text-align:right;padding:0.8rem;color:var(--text);">$30.00</td>
+            <td style="text-align:right;padding:0.8rem;color:var(--text);">$60.00</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.8rem;color:var(--text);">Claude 3 Opus</td>
+            <td style="text-align:right;padding:0.8rem;color:var(--text);">$15.00</td>
+            <td style="text-align:right;padding:0.8rem;color:var(--text);">$75.00</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.8rem;color:var(--text);">Gemini Pro</td>
+            <td style="text-align:right;padding:0.8rem;color:var(--text);">$0.50</td>
+            <td style="text-align:right;padding:0.8rem;color:var(--text);">$1.50</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><strong>Key insight:</strong> Completion tokens cost 2–5x more than prompt tokens. If your app generates long completions, you're paying a premium.</p>
+
+      <h2>Building a Token Cost Model</h2>
+      <p>Here's the framework:</p>
+
+      <h3>Step 1: Instrument Your Code</h3>
+      <p>Capture prompt and completion tokens from every API call:</p>
+      <pre style="background:var(--card-bg);padding:1rem;border-radius:8px;overflow-x:auto;"><code>response = openai.ChatCompletion.create(...)
+prompt_tokens = response['usage']['prompt_tokens']
+completion_tokens = response['usage']['completion_tokens']
+
+# Calculate cost
+model_pricing = {
+  'gpt-4': {'prompt': 0.03/1000, 'completion': 0.06/1000}
+}
+cost = (prompt_tokens * model_pricing['gpt-4']['prompt'] +
+        completion_tokens * model_pricing['gpt-4']['completion'])</code></pre>
+
+      <h3>Step 2: Attribute to Business Context</h3>
+      <p>Log tokens with business metadata:</p>
+      <ul>
+        <li>User ID / customer ID</li>
+        <li>Feature / use case (summarization, classification, generation)</li>
+        <li>Model used</li>
+        <li>Timestamp</li>
+        <li>Cost</li>
+      </ul>
+      <p>This lets you answer: "How much do we spend on customer support chat?"</p>
+
+      <h3>Step 3: Analyze Token Efficiency</h3>
+      <p>Calculate key metrics:</p>
+      <ul>
+        <li><strong>Tokens per transaction:</strong> Are your prompts getting too long?</li>
+        <li><strong>Completion ratio:</strong> Completion tokens / prompt tokens (higher = more expensive output)</li>
+        <li><strong>Cost per feature:</strong> Summarization vs. classification vs. generation</li>
+      </ul>
+
+      <h2>Optimization Strategies</h2>
+
+      <h3>1. Prompt Engineering</h3>
+      <p>Fewer tokens in your prompt = lower cost. Example:</p>
+      <ul>
+        <li><strong>Verbose prompt:</strong> "Please analyze the following customer feedback and tell me what the customer is saying about our product quality..." (45 tokens)</li>
+        <li><strong>Optimized prompt:</strong> "Analyze feedback: sentiment and product quality issues" (10 tokens)</li>
+      </ul>
+      <p>This 4.5x reduction compounds across millions of requests.</p>
+
+      <h3>2. Model Selection</h3>
+      <p>Use cheaper models where accuracy allows:</p>
+      <ul>
+        <li>GPT-3.5 Turbo for simple classification</li>
+        <li>Claude 3 Haiku for parsing and extraction</li>
+        <li>GPT-4 only when you really need reasoning</li>
+      </ul>
+
+      <h3>3. Caching Strategies</h3>
+      <p>If you're hitting the same LLM with similar prompts (like system instructions), cache the responses. With MetaFinOps, you can identify repeated patterns and implement caching.</p>
+
+      <h3>4. Batch Processing</h3>
+      <p>Process multiple requests together to reduce overhead tokens.</p>
+
+      <h2>The MetaFinOps Advantage</h2>
+      <p>MetaFinOps handles token cost modeling automatically:</p>
+      <ul>
+        <li><strong>Provider-agnostic tracking:</strong> OpenAI, Anthropic, Google, Cohere, Mistral, self-hosted</li>
+        <li><strong>Per-customer attribution:</strong> See which customers drive LLM costs</li>
+        <li><strong>Real-time alerts:</strong> Flag unexpectedly high token counts</li>
+        <li><strong>Optimization recommendations:</strong> "Your summaries use 2x more completion tokens than industry average"</li>
+        <li><strong>Audit trails:</strong> Full transparency for compliance and cost allocation</li>
+      </ul>
+
+      <h2>The Bottom Line</h2>
+      <p>Token cost modeling is not optional for AI-native companies. Without it, you're making decisions with incomplete information. A single poorly-optimized feature can cost $50K+/month.</p>
+      <p>Start capturing token-level costs today. The savings will pay for the infrastructure in weeks.</p>
+
+      <!-- CTA -->
+      <div style="background:var(--card-bg);border:1px solid var(--card-border);padding:2rem;border-radius:12px;text-align:center;margin-top:3rem;">
+        <h3 style="margin-bottom:0.8rem;">Start Tracking Token Costs</h3>
+        <p style="color:var(--text-muted);margin-bottom:1.5rem;">MetaFinOps provides token-level cost modeling across all LLM providers.</p>
+        <a href="../contact.html" class="btn-primary">Request a Demo</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RELATED ARTICLES -->
+  <section style="padding:4rem 0;border-top:1px solid var(--border);">
+    <div class="container">
+      <h2 style="margin-bottom:2rem;">Related Articles</h2>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;">
+        <a href="gpu-idle-cost.html" style="padding:2rem;border:1px solid var(--card-border);border-radius:12px;transition:all var(--transition);color:inherit;text-decoration:none;" onmouseover="this.style.background='var(--card-bg)'" onmouseout="this.style.background=''">
+          <span class="blog-tag">AI/GPU FinOps</span>
+          <h3 style="font-size:1.05rem;color:var(--heading);margin:0.8rem 0;">The Hidden Cost of Idle GPUs</h3>
+          <p style="color:var(--text-muted);margin:0;font-size:0.9rem;">AI startups waste 35% of GPU budget on idle compute.</p>
+        </a>
+        <a href="../blog.html" style="padding:2rem;border:1px solid var(--card-border);border-radius:12px;transition:all var(--transition);color:inherit;text-decoration:none;" onmouseover="this.style.background='var(--card-bg)'" onmouseout="this.style.background=''">
+          <span class="blog-tag">Blog</span>
+          <h3 style="font-size:1.05rem;color:var(--heading);margin:0.8rem 0;">Back to All Articles</h3>
+          <p style="color:var(--text-muted);margin:0;font-size:0.9rem;">Explore more insights on AI FinOps, DevOps guardrails, and cloud cost optimization.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;padding:4rem 2rem 2rem;">
+      <!-- Solutions -->
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Solutions</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="../solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);">Cloud Cost Optimization</a>
+          <a href="../solutions/ai-gpu-finops.html" style="font-size:0.85rem;color:var(--text-muted);">AI/GPU FinOps</a>
+          <a href="../solutions/token-cost-intelligence.html" style="font-size:0.85rem;color:var(--text-muted);">Token Cost Intelligence</a>
+          <a href="../solutions/devops-finops.html" style="font-size:0.85rem;color:var(--text-muted);">DevOps FinOps</a>
+          <a href="../solutions/greenops.html" style="font-size:0.85rem;color:var(--text-muted);">GreenOps</a>
+        </div>
+      </div>
+      <!-- Features -->
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Features</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="../solutions/token-cost-intelligence.html" style="font-size:0.85rem;color:var(--text-muted);">Token Cost Modeling</a>
+          <a href="../solutions/ai-gpu-finops.html" style="font-size:0.85rem;color:var(--text-muted);">GPU Idle Detection</a>
+          <a href="../solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);">Multi-Provider Support</a>
+          <a href="../solutions/devops-finops.html" style="font-size:0.85rem;color:var(--text-muted);">Cost Optimization</a>
+        </div>
+      </div>
+      <!-- Resources -->
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Resources</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="../blog.html" style="font-size:0.85rem;color:var(--text-muted);">Blog</a>
+          <a href="../resources.html" style="font-size:0.85rem;color:var(--text-muted);">Resources</a>
+          <a href="../use-cases.html" style="font-size:0.85rem;color:var(--text-muted);">Use Cases</a>
+          <a href="../why-metafinops.html" style="font-size:0.85rem;color:var(--text-muted);">Why MetaFinOps</a>
+          <a href="../integrations.html" style="font-size:0.85rem;color:var(--text-muted);">Integrations</a>
+          <a href="../developers.html" style="font-size:0.85rem;color:var(--text-muted);">API Docs</a>
+        </div>
+      </div>
+      <!-- Company -->
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Company</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="../about.html" style="font-size:0.85rem;color:var(--text-muted);">About</a>
+          <a href="../careers.html" style="font-size:0.85rem;color:var(--text-muted);">Careers</a>
+          <a href="../security.html" style="font-size:0.85rem;color:var(--text-muted);">Security</a>
+          <a href="../contact.html" style="font-size:0.85rem;color:var(--text-muted);">Contact</a>
+          <a href="../privacy.html" style="font-size:0.85rem;color:var(--text-muted);">Privacy Policy</a>
+          <a href="../terms.html" style="font-size:0.85rem;color:var(--text-muted);">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Bottom -->
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:1rem;">
+      <div style="display:flex;align-items:center;gap:0.8rem;">
+        <a href="../index.html" class="brand" style="gap:0.5rem;">
+          <img class="brand-logo" src="../images/logo-icon-transparent.png" alt="MetaFinOps" width="28" height="25" style="height:25px;width:auto;">
+          <span class="brand-name" style="font-size:0.95rem;">MetaFinOps</span>
+        </a>
+        <span style="font-size:0.78rem;color:var(--text-muted);">&copy; 2026 MetaFinOps. All rights reserved.</span>
+      </div>
+      <div style="display:flex;gap:0.8rem;">
+        <a href="#" aria-label="LinkedIn" class="social-circle"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+        <a href="#" aria-label="Twitter" class="social-circle"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 01-1.93.07 4.28 4.28 0 004 2.98 8.521 8.521 0 01-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="chat-button" type="button" aria-label="Chat"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg></button>
+
+  <script src="../js/particles.js?v=5"></script>
+  <script src="../js/main.js?v=5"></script>
+</body>
+</html>

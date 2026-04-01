@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROI Calculator – MetaFinOps</title>
+  <meta name="description" content="Calculate your potential savings with MetaFinOps. See how much you can save on cloud, GPU, and AI costs with our ROI calculator." />
+  <link rel="stylesheet" href="css/styles.css?v=5" />
+  <link rel="stylesheet" href="css/pages.css?v=5" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ROI Calculator Styles */
+    .roi-hero {
+      text-align: center;
+      padding: 5rem 0 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .roi-hero h1 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 600;
+      color: var(--heading);
+      margin-bottom: 0.8rem;
+    }
+    .roi-hero p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .roi-section {
+      padding: 3rem 0 4rem;
+    }
+    .roi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    /* Input Panel */
+    .roi-inputs {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      background: rgba(255,255,255,0.01);
+    }
+    .roi-inputs h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--heading);
+      margin-bottom: 1.5rem;
+    }
+    .roi-field {
+      margin-bottom: 1.5rem;
+    }
+    .roi-field:last-child {
+      margin-bottom: 0;
+    }
+    .roi-field label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .roi-field .input-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .roi-field input[type="range"] {
+      flex: 1;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 6px;
+      border-radius: 3px;
+      background: var(--border);
+      outline: none;
+      cursor: pointer;
+    }
+    .roi-field input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+      border: 2px solid #fff;
+      box-shadow: 0 0 6px rgba(0,0,0,0.3);
+    }
+    .roi-field input[type="range"]::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+      border: 2px solid #fff;
+      box-shadow: 0 0 6px rgba(0,0,0,0.3);
+    }
+    .roi-field .value-display {
+      min-width: 110px;
+      text-align: right;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--heading);
+      background: #1a1a2e;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.55rem 0.8rem;
+      font-family: inherit;
+    }
+    .roi-field select {
+      width: 100%;
+      background: #1a1a2e;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.6rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      font-family: inherit;
+      cursor: pointer;
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.8rem center;
+    }
+    .roi-field select:focus {
+      border-color: var(--accent);
+    }
+
+    /* Results Panel */
+    .roi-results {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      background: rgba(255,255,255,0.01);
+      position: sticky;
+      top: 6rem;
+    }
+    .roi-results h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--heading);
+      margin-bottom: 1.5rem;
+    }
+    .roi-total-savings {
+      text-align: center;
+      padding: 1.5rem;
+      border: 1px solid rgba(0, 230, 118, 0.2);
+      border-radius: 10px;
+      background: rgba(0, 230, 118, 0.04);
+      margin-bottom: 1.5rem;
+    }
+    .roi-total-savings .label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.3rem;
+    }
+    .roi-total-savings .amount {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #00e676;
+      transition: all 0.3s ease;
+    }
+
+    .roi-breakdown {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .roi-breakdown-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .roi-breakdown-item:last-child {
+      border-bottom: none;
+    }
+    .roi-breakdown-item .item-label {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    .roi-breakdown-item .item-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--heading);
+      transition: all 0.3s ease;
+    }
+
+    .roi-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .roi-metric-card {
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-align: center;
+    }
+    .roi-metric-card .metric-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.3rem;
+    }
+    .roi-metric-card .metric-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--heading);
+      transition: all 0.3s ease;
+    }
+    .roi-metric-card .metric-value.green {
+      color: #00e676;
+    }
+
+    .roi-cost-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 1rem;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    .roi-cost-row .cost-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .roi-cost-row .cost-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--heading);
+      transition: all 0.3s ease;
+    }
+
+    /* Methodology */
+    .roi-methodology {
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .roi-methodology .method-box {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .roi-methodology h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--heading);
+      margin-bottom: 0.8rem;
+    }
+    .roi-methodology p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+
+    /* CTA */
+    .roi-cta {
+      text-align: center;
+      padding: 4rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .roi-cta h2 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 600;
+      color: var(--heading);
+      margin-bottom: 1rem;
+    }
+    .roi-cta p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .roi-grid {
+        grid-template-columns: 1fr;
+      }
+      .roi-results {
+        position: static;
+      }
+      .roi-metrics {
+        grid-template-columns: 1fr 1fr;
+      }
+      .roi-field .input-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+      }
+      .roi-field .value-display {
+        text-align: left;
+        min-width: unset;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar"><div class="top-bar-inner"><span></span><span>AI-native FinOps Solutions by <a href="index.html">MetaFinOps</a></span></div></div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img class="brand-logo" src="images/logo-icon-transparent.png" alt="MetaFinOps" width="36" height="33" style="height:33px;width:auto;">
+        <span class="brand-name">MetaFinOps</span>
+      </a>
+      <nav class="nav" id="mainNav">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false">Solutions <span class="chevron">&#9662;</span></button>
+          <div class="nav-dropdown-menu">
+            <a href="solutions/cloud-cost-optimization.html">Cloud Cost Optimization</a>
+            <a href="solutions/ai-gpu-finops.html">AI/GPU FinOps</a>
+            <a href="solutions/token-cost-intelligence.html">Token Cost Intelligence</a>
+            <a href="solutions/devops-finops.html">DevOps FinOps</a>
+            <a href="solutions/greenops.html">GreenOps</a>
+            <div class="dropdown-divider"></div>
+            <a href="use-cases.html">Use Cases</a>
+            <a href="why-metafinops.html">Why MetaFinOps</a>
+          </div>
+        </div>
+        <a href="platform.html">Platform</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="#" class="nav-login">
+          <span class="login-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg></span>
+          Log In
+        </a>
+        <a href="contact.html" class="btn-outline-header">Get Started</a>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="roi-hero">
+    <div class="container">
+      <h1>ROI Calculator</h1>
+      <p>See how much MetaFinOps can save your organization on cloud and AI infrastructure costs.</p>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="roi-section">
+    <div class="container">
+      <div class="roi-grid">
+
+        <!-- Left: Inputs -->
+        <div class="roi-inputs">
+          <h2>Your Current Spend</h2>
+
+          <div class="roi-field">
+            <label for="cloudSpend">Monthly Cloud Spend</label>
+            <div class="input-row">
+              <input type="range" id="cloudSpend" min="10000" max="10000000" step="10000" value="100000" />
+              <input type="text" class="value-display" id="cloudSpendDisplay" value="$100,000" readonly />
+            </div>
+          </div>
+
+          <div class="roi-field">
+            <label for="gpuSpend">Monthly GPU/AI Spend</label>
+            <div class="input-row">
+              <input type="range" id="gpuSpend" min="5000" max="5000000" step="5000" value="50000" />
+              <input type="text" class="value-display" id="gpuSpendDisplay" value="$50,000" readonly />
+            </div>
+          </div>
+
+          <div class="roi-field">
+            <label for="tokenSpend">Monthly Token/LLM Spend</label>
+            <div class="input-row">
+              <input type="range" id="tokenSpend" min="1000" max="1000000" step="1000" value="10000" />
+              <input type="text" class="value-display" id="tokenSpendDisplay" value="$10,000" readonly />
+            </div>
+          </div>
+
+          <div class="roi-field">
+            <label for="cloudAccounts">Number of Cloud Accounts</label>
+            <select id="cloudAccounts">
+              <option value="3">1 &ndash; 5</option>
+              <option value="13">6 &ndash; 20</option>
+              <option value="35">21 &ndash; 50</option>
+              <option value="75">50+</option>
+            </select>
+          </div>
+
+          <div class="roi-field">
+            <label for="engTeams">Number of Engineering Teams</label>
+            <select id="engTeams">
+              <option value="3">1 &ndash; 5</option>
+              <option value="13">6 &ndash; 20</option>
+              <option value="35">21 &ndash; 50</option>
+              <option value="75">50+</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Right: Results -->
+        <div class="roi-results">
+          <h2>Your Estimated Savings</h2>
+
+          <div class="roi-total-savings">
+            <div class="label">Estimated Annual Savings</div>
+            <div class="amount" id="totalAnnualSavings">$0</div>
+          </div>
+
+          <div class="roi-breakdown">
+            <div class="roi-breakdown-item">
+              <span class="item-label">Cloud optimization (30%)</span>
+              <span class="item-value" id="cloudSavings">$0</span>
+            </div>
+            <div class="roi-breakdown-item">
+              <span class="item-label">GPU idle reduction (35%)</span>
+              <span class="item-value" id="gpuSavings">$0</span>
+            </div>
+            <div class="roi-breakdown-item">
+              <span class="item-label">Token cost optimization (20%)</span>
+              <span class="item-value" id="tokenSavings">$0</span>
+            </div>
+          </div>
+
+          <div class="roi-metrics">
+            <div class="roi-metric-card">
+              <div class="metric-label">Time to ROI</div>
+              <div class="metric-value green" id="timeToRoi">0 mo</div>
+            </div>
+            <div class="roi-metric-card">
+              <div class="metric-label">3-Year Savings</div>
+              <div class="metric-value green" id="threeYearSavings">$0</div>
+            </div>
+            <div class="roi-metric-card">
+              <div class="metric-label">Net ROI</div>
+              <div class="metric-value green" id="netRoi">0%</div>
+            </div>
+            <div class="roi-metric-card">
+              <div class="metric-label">MetaFinOps Annual Cost</div>
+              <div class="metric-value" id="annualCost">$0</div>
+            </div>
+          </div>
+
+          <div class="roi-cost-row">
+            <span class="cost-label">Monthly MetaFinOps investment</span>
+            <span class="cost-value" id="monthlyCost">$0/mo</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY -->
+  <section class="roi-methodology">
+    <div class="container">
+      <div class="method-box">
+        <h2>How We Calculate</h2>
+        <p>Based on aggregate data from enterprises managing $1M+ in annual cloud spend. Individual results vary based on current optimization maturity. Our savings estimates reflect median outcomes across cloud optimization (30%), GPU idle reduction (35%), and token cost optimization (20%) observed in real-world deployments. Your actual savings may be higher or lower depending on your existing tooling, utilization patterns, and team workflows.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="roi-cta">
+    <div class="container">
+      <h2>Ready to See Real Numbers?</h2>
+      <p>Get a personalized savings analysis based on your actual infrastructure usage.</p>
+      <a href="contact.html" class="btn-primary" style="padding:0.85rem 2.2rem;font-size:1rem;">Request a Demo</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;padding:4rem 2rem 2rem;">
+      <!-- Solutions -->
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Solutions</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);transition:color var(--transition);">Cloud Cost Optimization</a>
+          <a href="solutions/ai-gpu-finops.html" style="font-size:0.85rem;color:var(--text-muted);">AI/GPU FinOps</a>
+          <a href="solutions/token-cost-intelligence.html" style="font-size:0.85rem;color:var(--text-muted);">Token Cost Intelligence</a>
+          <a href="solutions/devops-finops.html" style="font-size:0.85rem;color:var(--text-muted);">DevOps FinOps</a>
+          <a href="solutions/greenops.html" style="font-size:0.85rem;color:var(--text-muted);">GreenOps</a>
+          <span style="height:0.5rem;"></span>
+          <a href="platform.html" style="font-size:0.85rem;color:var(--text-muted);font-weight:600;">Platform</a>
+          <a href="pricing.html" style="font-size:0.85rem;color:var(--text-muted);font-weight:600;">Pricing</a>
+        </div>
+      </div>
+      <!-- Features -->
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Features</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);">Anomaly Detection</a>
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);">Cost Recommendations</a>
+          <a href="solutions/ai-gpu-finops.html" style="font-size:0.85rem;color:var(--text-muted);">GPU Cost Attribution</a>
+          <a href="solutions/token-cost-intelligence.html" style="font-size:0.85rem;color:var(--text-muted);">Token Cost Modeling</a>
+          <a href="solutions/devops-finops.html" style="font-size:0.85rem;color:var(--text-muted);">Budget Guardrails</a>
+          <a href="solutions/devops-finops.html" style="font-size:0.85rem;color:var(--text-muted);">PR Cost Annotations</a>
+          <a href="solutions/greenops.html" style="font-size:0.85rem;color:var(--text-muted);">Carbon Tracking</a>
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);">Virtual Tagging</a>
+          <a href="solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);">Unit Costs</a>
+        </div>
+      </div>
+      <!-- Resources -->
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Resources</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="blog.html" style="font-size:0.85rem;color:var(--text-muted);">Blog</a>
+          <a href="resources.html" style="font-size:0.85rem;color:var(--text-muted);">Resources</a>
+          <a href="use-cases.html" style="font-size:0.85rem;color:var(--text-muted);">Use Cases</a>
+          <a href="why-metafinops.html" style="font-size:0.85rem;color:var(--text-muted);">Why MetaFinOps</a>
+          <a href="integrations.html" style="font-size:0.85rem;color:var(--text-muted);">Integrations</a>
+          <a href="developers.html" style="font-size:0.85rem;color:var(--text-muted);">API Docs</a>
+        </div>
+      </div>
+      <!-- Company -->
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Company</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="about.html" style="font-size:0.85rem;color:var(--text-muted);">About</a>
+          <a href="careers.html" style="font-size:0.85rem;color:var(--text-muted);">Careers</a>
+          <a href="security.html" style="font-size:0.85rem;color:var(--text-muted);">Security</a>
+          <a href="contact.html" style="font-size:0.85rem;color:var(--text-muted);">Contact</a>
+          <a href="privacy.html" style="font-size:0.85rem;color:var(--text-muted);">Privacy Policy</a>
+          <a href="terms.html" style="font-size:0.85rem;color:var(--text-muted);">Terms of Service</a>
+          <span style="height:0.5rem;"></span>
+          <a href="contact.html" class="btn-primary" style="width:fit-content;padding:0.6rem 1.4rem;font-size:0.85rem;">Get Started</a>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Bottom -->
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:1rem;">
+      <div style="display:flex;align-items:center;gap:0.8rem;">
+        <a href="index.html" class="brand" style="gap:0.5rem;">
+          <img class="brand-logo" src="images/logo-icon-transparent.png" alt="MetaFinOps" width="28" height="25" style="height:25px;width:auto;">
+          <span class="brand-name" style="font-size:0.95rem;">MetaFinOps</span>
+        </a>
+        <span style="font-size:0.78rem;color:var(--text-muted);">&copy; 2026 MetaFinOps. All rights reserved.</span>
+      </div>
+      <div style="display:flex;gap:0.8rem;">
+        <a href="#" aria-label="LinkedIn" class="social-circle"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+        <a href="#" aria-label="Twitter" class="social-circle"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 01-1.93.07 4.28 4.28 0 004 2.98 8.521 8.521 0 01-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+  <button class="chat-button" type="button" aria-label="Chat"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg></button>
+
+  <script src="js/particles.js?v=5"></script>
+  <script src="js/main.js?v=5"></script>
+
+  <script>
+  (function() {
+    // Elements
+    const cloudSpend = document.getElementById('cloudSpend');
+    const gpuSpend = document.getElementById('gpuSpend');
+    const tokenSpend = document.getElementById('tokenSpend');
+    const cloudAccounts = document.getElementById('cloudAccounts');
+    const engTeams = document.getElementById('engTeams');
+
+    const cloudSpendDisplay = document.getElementById('cloudSpendDisplay');
+    const gpuSpendDisplay = document.getElementById('gpuSpendDisplay');
+    const tokenSpendDisplay = document.getElementById('tokenSpendDisplay');
+
+    const totalAnnualSavingsEl = document.getElementById('totalAnnualSavings');
+    const cloudSavingsEl = document.getElementById('cloudSavings');
+    const gpuSavingsEl = document.getElementById('gpuSavings');
+    const tokenSavingsEl = document.getElementById('tokenSavings');
+    const timeToRoiEl = document.getElementById('timeToRoi');
+    const threeYearSavingsEl = document.getElementById('threeYearSavings');
+    const netRoiEl = document.getElementById('netRoi');
+    const annualCostEl = document.getElementById('annualCost');
+    const monthlyCostEl = document.getElementById('monthlyCost');
+
+    // Savings rates
+    const CLOUD_RATE = 0.30;
+    const GPU_RATE = 0.35;
+    const TOKEN_RATE = 0.20;
+
+    // Cost tiers based on team count
+    function getMonthlyCost(teamValue) {
+      const t = parseInt(teamValue);
+      if (t <= 5) return 499;
+      if (t <= 20) return 1499;
+      if (t <= 50) return 3999;
+      return 7999;
+    }
+
+    // Format currency
+    function formatCurrency(num) {
+      if (num >= 1000000) {
+        return '$' + (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+      }
+      return '$' + Math.round(num).toLocaleString('en-US');
+    }
+
+    function formatCurrencyFull(num) {
+      return '$' + Math.round(num).toLocaleString('en-US');
+    }
+
+    // Animate number change
+    function animateValue(el, newText) {
+      el.style.transform = 'scale(1.05)';
+      el.style.opacity = '0.7';
+      el.textContent = newText;
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          el.style.transform = 'scale(1)';
+          el.style.opacity = '1';
+        });
+      });
+    }
+
+    // Recalculate
+    function calculate() {
+      const cloud = parseInt(cloudSpend.value);
+      const gpu = parseInt(gpuSpend.value);
+      const token = parseInt(tokenSpend.value);
+      const teams = parseInt(engTeams.value);
+
+      // Update displays
+      cloudSpendDisplay.value = formatCurrencyFull(cloud);
+      gpuSpendDisplay.value = formatCurrencyFull(gpu);
+      tokenSpendDisplay.value = formatCurrencyFull(token);
+
+      // Monthly savings
+      const cloudSav = cloud * CLOUD_RATE;
+      const gpuSav = gpu * GPU_RATE;
+      const tokenSav = token * TOKEN_RATE;
+      const totalMonthlySavings = cloudSav + gpuSav + tokenSav;
+      const totalAnnualSavings = totalMonthlySavings * 12;
+
+      // MetaFinOps cost
+      const monthlyCost = getMonthlyCost(teams);
+      const annualCost = monthlyCost * 12;
+
+      // Time to ROI (months)
+      const timeToRoi = totalAnnualSavings > 0 ? (annualCost / totalAnnualSavings * 12) : 0;
+
+      // 3-year projected savings (net)
+      const threeYearNet = (totalAnnualSavings * 3) - (annualCost * 3);
+
+      // Net ROI %
+      const netRoi = annualCost > 0 ? ((totalAnnualSavings - annualCost) / annualCost * 100) : 0;
+
+      // Update UI
+      animateValue(totalAnnualSavingsEl, formatCurrencyFull(totalAnnualSavings));
+      animateValue(cloudSavingsEl, formatCurrencyFull(cloudSav * 12) + '/yr');
+      animateValue(gpuSavingsEl, formatCurrencyFull(gpuSav * 12) + '/yr');
+      animateValue(tokenSavingsEl, formatCurrencyFull(tokenSav * 12) + '/yr');
+      animateValue(timeToRoiEl, timeToRoi.toFixed(1) + ' mo');
+      animateValue(threeYearSavingsEl, formatCurrencyFull(threeYearNet));
+      animateValue(netRoiEl, Math.round(netRoi).toLocaleString('en-US') + '%');
+      animateValue(annualCostEl, formatCurrencyFull(annualCost));
+      animateValue(monthlyCostEl, formatCurrencyFull(monthlyCost) + '/mo');
+    }
+
+    // Bind events
+    [cloudSpend, gpuSpend, tokenSpend].forEach(function(slider) {
+      slider.addEventListener('input', calculate);
+    });
+    [cloudAccounts, engTeams].forEach(function(sel) {
+      sel.addEventListener('change', calculate);
+    });
+
+    // Initial calculation
+    calculate();
+  })();
+  </script>
+
+</body>
+</html>

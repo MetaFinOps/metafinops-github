@@ -263,4 +263,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+
+  // ── Blog category filtering ────────────────────────────────
+  const blogTags = document.querySelectorAll('.blog-tag.active, .category-filter .blog-tag');
+  const blogCards = document.querySelectorAll('.blog-card[data-category]');
+
+  if (blogTags.length > 0 && blogCards.length > 0) {
+    blogTags.forEach(tag => {
+      tag.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // Update active state
+        blogTags.forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+
+        // Get the category to filter
+        const category = this.textContent.trim();
+
+        // Filter blog cards
+        blogCards.forEach(card => {
+          const cardCategory = card.getAttribute('data-category');
+          if (category === 'All' || cardCategory === category) {
+            card.style.display = '';
+            // Trigger fade-in animation
+            setTimeout(() => {
+              card.style.opacity = '1';
+            }, 10);
+          } else {
+            card.style.opacity = '0';
+            card.style.pointerEvents = 'none';
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+  }
+
 });
